@@ -1,7 +1,11 @@
+/*
+     Author: Bakhier Gaibulloev
+*/
+
 /**
- *@param U type of dictionary items.
+ *@param T type of dictionary items.
  */
-class Dictionary<U> {
+export class Dictionary<T> {
 
     //=========================================================================================================================================================
     // Public properties
@@ -15,7 +19,7 @@ class Dictionary<U> {
     // Constructor
     // =========================================================================================================================================================
 
-    constructor(init: { key: string; value: U; }[]) {
+    constructor(init: { key: string; value: T; }[]) {
         for (let i = 0; i < init.length; i++) {
             // @ts-ignore
             this[init[i].key] = init[i].value;
@@ -34,7 +38,7 @@ class Dictionary<U> {
     }
 
     /**
-     * Tests if this dictionary maps no keys to value.
+     * Returns 'true' if Dictionary is empty and 'false' if no.
      * */
     public IsEmpty(): boolean {
         return this.Keys().length === 0
@@ -43,7 +47,7 @@ class Dictionary<U> {
     /**
      * Add new item to dictionary.
      */
-    public Put(key: string, value: U) {
+    public Put(key: string, value: T) {
         // @ts-ignore
         this[key] = value;
     }
@@ -83,8 +87,8 @@ class Dictionary<U> {
     /**
      * Returns array of all items.
      */
-    public ToArray(): U[] {
-        let result: U[] = [];
+    public ToArray(): T[] {
+        let result: T[] = [];
 
         for (let i in this)
             if (!(this.Get(i) instanceof Function))
@@ -96,7 +100,7 @@ class Dictionary<U> {
     /**
      * Returns item by given key.
      */
-    public Get(key: string): U {
+    public Get(key: string): T {
         // @ts-ignore
         return this[key];
     }
@@ -104,7 +108,7 @@ class Dictionary<U> {
     /**
      * Return item by given propertie's name and value.
      */
-    public getValueByProperty(property: string, key: string): U {
+    public getValueByProperty(property: string, key: string): T {
         return this.ToArray().filter(function (v) {
             // @ts-ignore
             return v[property] === key;
@@ -114,7 +118,7 @@ class Dictionary<U> {
     /**
      * Set new value to given key item.
      */
-    public SetValue(key: string, value: U): boolean {
+    public SetValue(key: string, value: T): boolean {
 
         // @ts-ignore
         if (this[key]) {
