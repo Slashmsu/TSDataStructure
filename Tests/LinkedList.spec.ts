@@ -43,7 +43,7 @@ describe('LinkedLists Tests', () => {
             linkedList.append(3);
             linkedList.append(4);
 
-            linkedList.print(); 
+            linkedList.print();
 
             // @ts-ignore
             expect(linkedList.getLast().getValue()).equal(4);
