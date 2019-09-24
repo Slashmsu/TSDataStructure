@@ -5,7 +5,7 @@ describe('LinkedList', () => {
     let linkedList: LinkedList<number>;
 
     beforeEach(() => {
-        linkedList = new LinkedList<number>() 
+        linkedList = new LinkedList<number>()
     });
 
     test('constructor', () => {
@@ -33,34 +33,34 @@ describe('LinkedList', () => {
     
     });
 
-    test('size', () => { 
+    test('size', () => {
  
-        expect(linkedList.size()).toEqual(0);   
+        expect(linkedList.size()).toEqual(0);
 
         linkedList.print();
 
-        linkedList.append(1); 
-        linkedList.append(2);   
-        linkedList.append(3);  
-        linkedList.append(4);  
+        linkedList.append(1);
+        linkedList.append(2);
+        linkedList.append(3);
+        linkedList.append(4);
 
         linkedList.print();
 
-        expect(linkedList.size()).toEqual(4);   
+        expect(linkedList.size()).toEqual(4);
 
         // @ts-ignore
-        linkedList.getLast().getPrevious().setNext(null); 
-        expect(linkedList.size()).toEqual(3);    
+        linkedList.getLast().getPrevious().setNext(null);
+        expect(linkedList.size()).toEqual(3);
 
         linkedList.print();
 
     });
     
-    test('append', () => { 
+    test('append', () => {
         linkedList.append(1);
 
         // @ts-ignore
-        expect(linkedList.getHead().getValue()).toEqual(1); 
+        expect(linkedList.getHead().getValue()).toEqual(1);
 
         linkedList.append(2);
         linkedList.append(3);
@@ -83,7 +83,7 @@ describe('LinkedList', () => {
     
     });
     
-    test('getLast', () => { 
+    test('getLast', () => {
         linkedList.append(1);
         linkedList.append(2);
         linkedList.append(3);
