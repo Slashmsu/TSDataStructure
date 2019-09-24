@@ -1,5 +1,5 @@
 /*
-     Author: Bakhier Gaibulloev
+     Author: Bakhtier Gaibulloev
 */
 
 /**
@@ -44,6 +44,8 @@ export class LinkedListNode<T> {
      * Returns 'Previous' node
      * */
     public getPrevious(): LinkedListNode<T> | null {
+
+        // @ts-ignore
         return !this._previous ? null : this._previous;
     }
 

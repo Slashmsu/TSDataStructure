@@ -1,5 +1,5 @@
 /*
-     Author: Bakhier Gaibulloev
+     Author: Bakhtier Gaibulloev
 */
 
 /**
@@ -19,12 +19,16 @@ export class Dictionary<T> {
     // Constructor
     // =========================================================================================================================================================
 
-    constructor(init: { key: string; value: T; }[]) {
+    constructor() {
+        
+    }
+
+    /*constructor(init: { key: string; value: T; }[]) {
         for (let i = 0; i < init.length; i++) {
             // @ts-ignore
             this[init[i].key] = init[i].value;
         }
-    }
+    }*/
 
     //=========================================================================================================================================================
     // Public methods
@@ -33,29 +37,37 @@ export class Dictionary<T> {
     /**
      * Returns the number of entries (distinct keys) in this dictionary.
      */
-    public Size(): number {
-        return this.Keys().length;
+    public size(): number {
+        return this.keys().length;
     }
 
     /**
      * Returns 'true' if Dictionary is empty and 'false' if no.
      * */
-    public IsEmpty(): boolean {
-        return this.Keys().length === 0
+    public isEmpty(): boolean {
+        return this.keys().length === 0
     }
 
     /**
      * Add new item to dictionary.
      */
-    public Put(key: string, value: T) {
+    public put(key: string, value: T) {
         // @ts-ignore
         this[key] = value;
     }
 
     /**
+     * Returns item by given key.
+     */
+    public get(key: string): T {
+        // @ts-ignore
+        return this[key];
+    }
+
+    /**
      * Remove item from dictionary.
      */
-    public Remove(key: string) {
+    public remove(key: string) {
         // @ts-ignore
         delete this[key];
     }
@@ -63,17 +75,17 @@ export class Dictionary<T> {
     /**
      * Remove all items from dictionary.
      */
-    public Clear() {
+    public clear() {
         let that = this;
-        that.Keys().forEach(function (e) {
-            that.Remove(e);
+        that.keys().forEach(function (e) {
+            that.remove(e);
         })
     }
 
     /**
      * Returns string array of items keys.
      */
-    public Keys(): string[] {
+    public keys(): string[] {
         let result = [];
 
         for (let i in this)
@@ -87,38 +99,20 @@ export class Dictionary<T> {
     /**
      * Returns array of all items.
      */
-    public ToArray(): T[] {
+    public toArray(): T[] {
         let result: T[] = [];
 
         for (let i in this)
-            if (!(this.Get(i) instanceof Function))
-                result.push(this.Get(i));
+            if (!(this.get(i) instanceof Function))
+                result.push(this.get(i));
 
         return result;
     }
 
     /**
-     * Returns item by given key.
-     */
-    public Get(key: string): T {
-        // @ts-ignore
-        return this[key];
-    }
-
-    /**
-     * Return item by given propertie's name and value.
-     */
-    public getValueByProperty(property: string, key: string): T {
-        return this.ToArray().filter(function (v) {
-            // @ts-ignore
-            return v[property] === key;
-        })[0];
-    }
-
-    /**
      * Set new value to given key item.
      */
-    public SetValue(key: string, value: T): boolean {
+    public setValue(key: string, value: T): boolean {
 
         // @ts-ignore
         if (this[key]) {
@@ -134,7 +128,7 @@ export class Dictionary<T> {
     /**
      * Check is item with given key exist.
      */
-    public ContainsKey(key: string): boolean {
+    public containsKey(key: string): boolean {
         // @ts-ignore
         return typeof this[key] !== "undefined";
     }

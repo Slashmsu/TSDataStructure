@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "Collection of data structures",
   "scripts": {
-    "test": "ts-mocha -p tsconfig.json Tests/**/*.spec.ts",
-    "testWithCoverage": "nyc -r lcov -e .ts -x \"*.spec.ts\" ts-mocha -r ts-node/register Tests/**/*.spec.ts && nyc report"
+    "test": "jest",
+    "test-watch": "npm t -- --watch"
   },
   "repository": {
     "type": "git",
@@ -23,12 +23,9 @@
   },
   "homepage": "https://github.com/Slashmsu/TypeStructure#readme",
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.7",
-    "chai": "^4.2.0",
-    "mocha": "^6.2.0",
-    "nyc": "^14.1.1",
-    "ts-node": "^8.3.0"
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0"
   },
   "dependencies": {
     "typescript": "^3.5.3"
