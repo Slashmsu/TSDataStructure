@@ -2,12 +2,12 @@
      Author: Bakhtier Gaibulloev
 */
 
-import {ListNode} from "./ListNode";
+import {DoubleLinkedNode} from "./DoubleLinkedNode";
 
 /**
- *@param T type of LinkedList items.
+ *@param T type of DoubleLinkedList items.
  */
-export class LinkedList<T> {
+export class DoubleLinkedList<T> {
 
     //=========================================================================================================================================================
     // Public properties
@@ -17,8 +17,8 @@ export class LinkedList<T> {
     // Private properties
     //=========================================================================================================================================================
 
-    private _head: ListNode<T> | null;
-    private _last: ListNode<T> | null;
+    private _head: DoubleLinkedNode<T> | null;
+    private _last: DoubleLinkedNode<T> | null;
 
     //========================================================================================================================================================
     // Constructor
@@ -36,7 +36,7 @@ export class LinkedList<T> {
     /**
      * Returns 'Head' node
      * */
-    public getHead(): ListNode<T> | null {
+    public getHead(): DoubleLinkedNode<T> | null {
         return !this._head ? null : this._head;
     }
 
@@ -57,7 +57,7 @@ export class LinkedList<T> {
         }
 
         let result = 0;
-        let node: ListNode<T>;
+        let node: DoubleLinkedNode<T>;
         node = this._head;
         while(node !== null) {
             node = node.getNext();
@@ -70,14 +70,14 @@ export class LinkedList<T> {
     /**
      * Append given value to the 'linkedList' and returns updated 'LinkedList'
      * */
-    public append (value: T): LinkedList<T> {
+    public append (value: T): DoubleLinkedList<T> {
 
         if (this.isEmpty()) {
-            this._head = new ListNode<T>(value);
+            this._head = new DoubleLinkedNode<T>(value);
             this._last = this._head;
         } else {
 
-            const node = new ListNode(value);
+            const node = new DoubleLinkedNode(value);
 
             if(this._last && this._head) {
 
@@ -85,6 +85,7 @@ export class LinkedList<T> {
                     this._head.setNext(node);
                 }
                 this._last.setNext(node);
+                node.setPrevious(this._last);
                 this._last = node;
             }
 
@@ -96,7 +97,7 @@ export class LinkedList<T> {
     /**
      * Returns 'Last' node
      * */
-    public getLast(): ListNode<T> | null {
+    public getLast(): DoubleLinkedNode<T> | null {
         return !this._last ? null : this._last;
     }
 
@@ -110,7 +111,7 @@ export class LinkedList<T> {
             return result;
         }
 
-        let node: ListNode<T>;
+        let node: DoubleLinkedNode<T>;
         node = this._head;
         while(node !== null) {
             result.push(node.getValue());

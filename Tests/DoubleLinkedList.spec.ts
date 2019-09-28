@@ -1,11 +1,11 @@
-import {LinkedList} from "../src/LinkedList";
+import {DoubleLinkedList} from "../src/DoubleLinkedList";
 
-describe('LinkedList', () => {
+describe('DoubleLinkedList', () => {
 
-    let doubleLinkedList: LinkedList<number>;
+    let doubleLinkedList: DoubleLinkedList<number>;
 
     beforeEach(() => {
-        doubleLinkedList = new LinkedList<number>()
+        doubleLinkedList = new DoubleLinkedList<number>()
     });
 
     test('constructor', () => {
@@ -44,6 +44,9 @@ describe('LinkedList', () => {
 
         expect(doubleLinkedList.size()).toEqual(4);
 
+        doubleLinkedList.getLast().getPrevious().setNext(null);
+        expect(doubleLinkedList.size()).toEqual(3);
+
     });
     
     test('append', () => {
@@ -53,6 +56,13 @@ describe('LinkedList', () => {
 
         doubleLinkedList.append(2);
         doubleLinkedList.append(3);
+
+        let someNode = doubleLinkedList.getLast().getPrevious();
+
+        expect(someNode.getPrevious().getValue()).toEqual(1);
+
+        expect(someNode.getNext().getValue()).toEqual(3);
+
         doubleLinkedList.append(4);
 
         expect(doubleLinkedList.getLast().getValue()).toEqual(4);

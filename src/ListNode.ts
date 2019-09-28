@@ -17,16 +17,14 @@ export class ListNode<T> {
 
     private _value: T | null;
     private _next?: ListNode<T> | null;
-    private _previous?: ListNode<T> | null;
 
     //========================================================================================================================================================
     // Constructor
     // =========================================================================================================================================================
 
-    constructor(value?: T | null, next?: ListNode<T> , previous?: ListNode<T>) {
+    constructor(value?: T | null, next?: ListNode<T>) {
         this._value = value;
         this._next = next;
-        this._previous = previous;
     }
 
     //=========================================================================================================================================================
@@ -63,37 +61,13 @@ export class ListNode<T> {
     }
 
     /**
-     * Sets given LinkedListNode as 'Next' node to the 'Current' node
+     * Sets given SingleListNode as 'Next' node to the 'Current' node
      * */
-    public setNext(next: ListNode<T> | null, setPrevious: boolean = false): ListNode<T> | null {
+    public setNext(next: ListNode<T> | null): ListNode<T> | null {
 
         this._next = next;
 
-        if (setPrevious && next)
-            next._previous = this;
-        
         return this._next;
-
-    }
-
-    /**
-     * Returns 'Previous' node
-     * */
-    public getPrevious(): ListNode<T> | null {
-        return !this._previous ? null : this._previous;
-    }
-
-    /**
-     * Sets given LinkedListNode as 'Previous' node to the 'Current' node
-     * */
-    public setPrevious(previous: ListNode<T> | null, setNext: boolean = false): ListNode<T> | null {
-
-        this._previous = previous;
-
-        if (setNext && previous)
-            previous._next = this;
-
-        return this._previous;
 
     }
 

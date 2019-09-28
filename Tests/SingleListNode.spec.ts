@@ -1,11 +1,11 @@
-import { SingleListNode } from "../src/SingleListNode";
+import { ListNode } from "../src/ListNode";
 
-describe('SingleLinkedList', () => {
+describe('ListNode', () => {
 
-    let singleListNode: SingleListNode<number>;
+    let singleListNode: ListNode<number>;
 
     beforeEach(() => {
-        singleListNode = new SingleListNode<number>(1)
+        singleListNode = new ListNode<number>(1)
     });
 
     test('constructor', () => {
@@ -17,7 +17,7 @@ describe('SingleLinkedList', () => {
 
     test('getNext', () => {
 
-        singleListNode.setNext(new SingleListNode(2));
+        singleListNode.setNext(new ListNode(2));
 
         expect(singleListNode.getValue()).toEqual(1);
         expect(singleListNode.getNext().getValue()).toEqual(2);
@@ -26,7 +26,7 @@ describe('SingleLinkedList', () => {
 
     test('setNext(node, true)', () => {
 
-        singleListNode.setNext(new SingleListNode(2));
+        singleListNode.setNext(new ListNode(2));
 
         expect(singleListNode.getNext().getValue()).toEqual(2);
     
@@ -34,7 +34,7 @@ describe('SingleLinkedList', () => {
 
     test('setNext(node)', () => {
 
-        singleListNode.setNext(new SingleListNode(2));
+        singleListNode.setNext(new ListNode(2));
 
         expect(singleListNode.getNext().getValue()).toEqual(2);
     
