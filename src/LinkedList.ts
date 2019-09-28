@@ -52,7 +52,7 @@ export class LinkedList<T> {
      * */
     public size(): number {
 
-        if (!this._head) { 
+        if (!this._head) {
             return 0;
         }
 

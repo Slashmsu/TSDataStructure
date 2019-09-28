@@ -11,7 +11,7 @@ describe('SingleLinkedList', () => {
     test('constructor', () => {
 
         expect(singleListNode.getValue()).toEqual(1);
-        expect(singleListNode.getNext()).toEqual(null); 
+        expect(singleListNode.getNext()).toEqual(null);
     
     });
 
@@ -20,7 +20,7 @@ describe('SingleLinkedList', () => {
         singleListNode.setNext(new SingleListNode(2));
 
         expect(singleListNode.getValue()).toEqual(1);
-        expect(singleListNode.getNext().getValue()).toEqual(2);  
+        expect(singleListNode.getNext().getValue()).toEqual(2);
     
     });
 
@@ -28,7 +28,7 @@ describe('SingleLinkedList', () => {
 
         singleListNode.setNext(new SingleListNode(2));
 
-        expect(singleListNode.getNext().getValue()).toEqual(2);  
+        expect(singleListNode.getNext().getValue()).toEqual(2);
     
     });
 
@@ -36,7 +36,7 @@ describe('SingleLinkedList', () => {
 
         singleListNode.setNext(new SingleListNode(2));
 
-        expect(singleListNode.getNext().getValue()).toEqual(2);  
+        expect(singleListNode.getNext().getValue()).toEqual(2);
     
     });
 

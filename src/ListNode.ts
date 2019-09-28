@@ -80,7 +80,7 @@ export class ListNode<T> {
      * Returns 'Previous' node
      * */
     public getPrevious(): ListNode<T> | null {
-        return !this._previous ? null : this._previous; 
+        return !this._previous ? null : this._previous;
     }
 
     /**
@@ -88,7 +88,7 @@ export class ListNode<T> {
      * */
     public setPrevious(previous: ListNode<T> | null, setNext: boolean = false): ListNode<T> | null {
 
-        this._previous = previous; 
+        this._previous = previous;
 
         if (setNext && previous)
             previous._next = this;
