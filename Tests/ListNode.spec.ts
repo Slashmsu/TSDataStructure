@@ -11,8 +11,8 @@ describe('LinkedList', () => {
     test('constructor', () => {
 
         expect(listNode.getValue()).toEqual(1);
-        expect(listNode.getNext()).toEqual(null); 
-        expect(listNode.getPrevious()).toEqual(null);  
+        expect(listNode.getNext()).toEqual(null);
+        expect(listNode.getPrevious()).toEqual(null);
     
     });
 
@@ -21,7 +21,7 @@ describe('LinkedList', () => {
         listNode.setNext(new ListNode(2));
 
         expect(listNode.getValue()).toEqual(1);
-        expect(listNode.getNext().getValue()).toEqual(2);  
+        expect(listNode.getNext().getValue()).toEqual(2);
     
     });
 
@@ -29,8 +29,8 @@ describe('LinkedList', () => {
 
         listNode.setNext(new ListNode(2), true);
 
-        expect(listNode.getNext().getValue()).toEqual(2);  
-        expect(listNode.getNext().getPrevious().getValue()).toEqual(1);  
+        expect(listNode.getNext().getValue()).toEqual(2);
+        expect(listNode.getNext().getPrevious().getValue()).toEqual(1);
     
     });
 
@@ -38,7 +38,7 @@ describe('LinkedList', () => {
 
         listNode.setNext(new ListNode(2));
 
-        expect(listNode.getNext().getValue()).toEqual(2);  
+        expect(listNode.getNext().getValue()).toEqual(2);
         expect(listNode.getNext().getPrevious()).toEqual(null);
     
     });
@@ -58,13 +58,13 @@ describe('LinkedList', () => {
 
         listNode.setNext(new ListNode(2), true);
 
-        expect(listNode.getNext().getPrevious().getValue()).toEqual(1); 
+        expect(listNode.getNext().getPrevious().getValue()).toEqual(1);
     
     });
 
     test('setPrevious(node, true)', () => {
         
-        listNode.setPrevious(new ListNode(2), true); 
+        listNode.setPrevious(new ListNode(2), true);
 
         expect(listNode.getPrevious().getNext().getValue()).toEqual(1);
     
@@ -72,7 +72,7 @@ describe('LinkedList', () => {
 
     test('setPrevious(node)', () => {
         
-        listNode.setPrevious(new ListNode(2)); 
+        listNode.setPrevious(new ListNode(2));
 
         expect(listNode.getPrevious().getNext()).toEqual(null);
     
