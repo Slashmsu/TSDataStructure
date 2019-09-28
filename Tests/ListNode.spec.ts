@@ -12,7 +12,7 @@ describe('LinkedList', () => {
 
         expect(listNode.getValue()).toEqual(1);
         expect(listNode.getNext()).toEqual(null); 
-        expect(listNode.getPrevious()).toEqual(null);
+        expect(listNode.getPrevious()).toEqual(null);  
     
     });
 

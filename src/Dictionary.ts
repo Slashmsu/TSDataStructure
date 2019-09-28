@@ -23,13 +23,6 @@ export class Dictionary<T> {
         
     }
 
-    /*constructor(init: { key: string; value: T; }[]) {
-        for (let i = 0; i < init.length; i++) {
-            // @ts-ignore
-            this[init[i].key] = init[i].value;
-        }
-    }*/
-
     //=========================================================================================================================================================
     // Public methods
     //=========================================================================================================================================================
@@ -65,7 +58,7 @@ export class Dictionary<T> {
     }
 
     /**
-     * Remove item from dictionary.
+     * Removes item from dictionary.
      */
     public remove(key: string) {
         // @ts-ignore
@@ -73,7 +66,7 @@ export class Dictionary<T> {
     }
 
     /**
-     * Remove all items from dictionary.
+     * Removes all items from dictionary.
      */
     public clear() {
         let that = this;

@@ -2,7 +2,7 @@
      Author: Bakhtier Gaibulloev
 */
 
-import {LinkedListNode} from "./Models/LinkedListNode";
+import {ListNode} from "./ListNode";
 
 /**
  *@param T type of LinkedList items.
@@ -17,9 +17,8 @@ export class LinkedList<T> {
     // Private properties
     //=========================================================================================================================================================
 
-    //private readonly _EMPTY_NODE: LinkedListNode<T>;
-    private _head: LinkedListNode<T> | null;
-    private _last: LinkedListNode<T> | null;
+    private _head: ListNode<T> | null;
+    private _last: ListNode<T> | null;
 
     //========================================================================================================================================================
     // Constructor
@@ -28,7 +27,6 @@ export class LinkedList<T> {
     constructor() {
         this._head = null;
         this._last = null;
-        //this._EMPTY_NODE = new LinkedListNode<T>();
     }
 
     //=========================================================================================================================================================
@@ -38,7 +36,7 @@ export class LinkedList<T> {
     /**
      * Returns 'Head' node
      * */
-    public getHead(): LinkedListNode<T> | null {
+    public getHead(): ListNode<T> | null {
         return !this._head ? null : this._head;
     }
 
@@ -54,15 +52,14 @@ export class LinkedList<T> {
      * */
     public size(): number {
 
-        if (!this._head) {
+        if (!this._head) { 
             return 0;
         }
 
         let result = 0;
-        let node: LinkedListNode<T>;
+        let node: ListNode<T>;
         node = this._head;
         while(node !== null) {
-            // @ts-ignore
             node = node.getNext();
             result++;
         }
@@ -76,11 +73,11 @@ export class LinkedList<T> {
     public append (value: T): LinkedList<T> {
 
         if (this.isEmpty()) {
-            this._head = new LinkedListNode<T>(value);
+            this._head = new ListNode<T>(value);
             this._last = this._head;
         } else {
 
-            const node = new LinkedListNode(value);
+            const node = new ListNode(value);
 
             if(this._last && this._head) {
 
@@ -100,9 +97,30 @@ export class LinkedList<T> {
     /**
      * Returns 'Last' node
      * */
-    public getLast(): LinkedListNode<T> | null {
+    public getLast(): ListNode<T> | null {
         return !this._last ? null : this._last;
     }
+
+    /**
+     * Returns array of all items.
+     */
+    public toArray(): T[] {
+        let result: T[] = [];
+
+        if (!this._head) {
+            return result;
+        }
+
+        let node: ListNode<T>;
+        node = this._head;
+        while(node !== null) {
+            result.push(node.getValue());
+            node = node.getNext();
+        }
+
+        return result;
+    }
+
 
     /**
      * Inserts given value to the linkedList and returns updated LinkedList
@@ -126,17 +144,10 @@ export class LinkedList<T> {
 
             const nodes: T[] = [];
 
-            // @ts-ignore
             while(node !== null) {
 
-
-                // @ts-ignore
-                //process.stdout.write(node.getValue() + "->");
-
-                // @ts-ignore
                 nodes.push(node.getValue());
 
-                // @ts-ignore
                 node = node.getNext();
             }
 
