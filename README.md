@@ -8,15 +8,15 @@ Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictio
 
 ## Dictionary<T>
 
-size(): number
-isEmpty(): boolean
-put(key: string, value: T)
-get(key: string): T
-remove(key: string)
-clear()
-keys(): string[]
-toArray(): T[] 
-containsKey(key: string): boolean 
+size(): number <br>
+isEmpty(): boolean <br>
+put(key: string, value: T) <br>
+get(key: string): T <br>
+remove(key: string) <br>
+clear() <br>
+keys(): string[] <br>
+toArray(): T[]  <br>
+containsKey(key: string): boolean  <br>
 
 ```typescript
 
