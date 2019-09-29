@@ -1,5 +1,5 @@
 {
-  "name": "typestructure",
+  "name": "TSDataStructure",
   "version": "0.0.1",
   "description": "Collection of data structures",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Slashmsu/TypeStructure.git"
+    "url": "git+https://github.com/Slashmsu/TSDataStructure.git"
   },
   "keywords": [
     "DataStructure",
@@ -19,9 +19,9 @@
   "author": "Bakhtier Gaibulloev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Slashmsu/TypeStructure/issues"
+    "url": "https://github.com/Slashmsu/TSDataStructure/issues"
   },
-  "homepage": "https://github.com/Slashmsu/TypeStructure#readme",
+  "homepage": "https://github.com/Slashmsu/TSDataStructure#readme",
   "devDependencies": {
     "@types/jest": "^24.0.18",
     "jest": "^24.9.0",
