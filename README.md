@@ -8,43 +8,15 @@ Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictio
 
 ## Dictionary<T>
 
-#### constructor()
-
 #### size(): number
-
-Returns the number of entries (distinct keys) in this dictionary.
-
 #### isEmpty(): boolean
-
-Returns 'true' if Dictionary is empty and 'false' if no.
-
 #### put(key: string, value: T)
-
-Add new item to dictionary.
-
 #### get(key: string): T
-
-Returns item by given key.
-
 #### remove(key: string)
-
-Removes item from dictionary.
-
 #### clear()
-
-Removes all items from dictionary.
-
 #### keys(): string[]
-
-Returns string array of items keys.
-
 #### toArray(): T[] 
-
-Returns array of all items.
-
 #### containsKey(key: string): boolean 
-
-Checks is item with given key exist.
 
 ```typescript
 
@@ -68,31 +40,12 @@ dictionary.size(); // 0
 
 ## LinkedList<T>
 
-#### constructor()
-
 #### getHead(): LinkedNode<T>
-
-Returns the 'Head' node
-
 #### isEmpty(): boolean
-
-Returns 'true' if 'LinkedList' is empty and 'false' if no.
-
 #### size(): number
-
-Returns the amount of nodes
-
 #### append(value: T): LinkedList<T>
-
-Append given value to the 'linkedList' and returns updated 'LinkedList'
-
 #### getLast(): LinkedNode<T>
-
-Returns the 'Last' node
-
 #### toArray(): T[]
-
-Returns array of all items.
 
 ```typescript
 
