@@ -1,6 +1,6 @@
 {
-  "name": "TSDataStructure",
-  "version": "0.0.1",
+  "name": "tsdatastructure",
+  "version": "0.1.1",
   "description": "Collection of data structures",
   "scripts": {
     "test": "jest",
