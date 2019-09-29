@@ -14,7 +14,9 @@
     "DataStructure",
     "TypeScript",
     "Dictionary",
-    "List"
+    "List",
+    "Stack",
+    "Queue"
   ],
   "author": "Bakhtier Gaibulloev",
   "license": "MIT",
