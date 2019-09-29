@@ -97,8 +97,9 @@ export class Dictionary<T> {
         const result: T[] = [];
 
         for (const i in this) {
-            if (!(this.get(i) instanceof Function))
+            if (!(this.get(i) instanceof Function)) {
                 result.push(this.get(i));
+            }
         }
 
         return result;
@@ -114,9 +115,8 @@ export class Dictionary<T> {
             // @ts-ignore
             this[key] = value;
             return true;
-        } 
+        }
             return false;
-        
 
     }
 
