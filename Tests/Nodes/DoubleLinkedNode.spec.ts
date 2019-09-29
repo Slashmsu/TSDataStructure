@@ -1,11 +1,11 @@
-import { DoubleLinkedNode } from "../../src/Nodes/DoubleLinkedNode";
+import { DoubleLinkedNode } from '../../src/Nodes/DoubleLinkedNode';
 
 describe('DoubleLinkedNode', () => {
 
     let doubleLinkedNode: DoubleLinkedNode<number>;
 
     beforeEach(() => {
-        doubleLinkedNode = new DoubleLinkedNode<number>(1)
+        doubleLinkedNode = new DoubleLinkedNode<number>(1);
     });
 
     test('constructor', () => {
@@ -13,7 +13,7 @@ describe('DoubleLinkedNode', () => {
         expect(doubleLinkedNode.getValue()).toEqual(1);
         expect(doubleLinkedNode.getNext()).toEqual(null);
         expect(doubleLinkedNode.getPrevious()).toEqual(null);
-    
+
     });
 
     test('getNext', () => {
@@ -22,7 +22,7 @@ describe('DoubleLinkedNode', () => {
 
         expect(doubleLinkedNode.getValue()).toEqual(1);
         expect(doubleLinkedNode.getNext().getValue()).toEqual(2);
-    
+
     });
 
     test('setNext(node, true)', () => {
@@ -31,7 +31,7 @@ describe('DoubleLinkedNode', () => {
 
         expect(doubleLinkedNode.getNext().getValue()).toEqual(2);
         expect(doubleLinkedNode.getNext().getPrevious().getValue()).toEqual(1);
-    
+
     });
 
     test('setNext(node)', () => {
@@ -40,7 +40,7 @@ describe('DoubleLinkedNode', () => {
 
         expect(doubleLinkedNode.getNext().getValue()).toEqual(2);
         expect(doubleLinkedNode.getNext().getPrevious()).toEqual(null);
-    
+
     });
 
     test('getValue', () => {
@@ -51,7 +51,7 @@ describe('DoubleLinkedNode', () => {
 
         doubleLinkedNode.setValue(13);
         expect(doubleLinkedNode.getValue()).toEqual(13);
-    
+
     });
 
     test('getPrevious', () => {
@@ -59,24 +59,23 @@ describe('DoubleLinkedNode', () => {
         doubleLinkedNode.setNext(new DoubleLinkedNode(2), true);
 
         expect(doubleLinkedNode.getNext().getPrevious().getValue()).toEqual(1);
-    
+
     });
 
     test('setPrevious(node, true)', () => {
-        
+
         doubleLinkedNode.setPrevious(new DoubleLinkedNode(2), true);
 
         expect(doubleLinkedNode.getPrevious().getNext().getValue()).toEqual(1);
-    
+
     });
 
     test('setPrevious(node)', () => {
-        
+
         doubleLinkedNode.setPrevious(new DoubleLinkedNode(2));
 
         expect(doubleLinkedNode.getPrevious().getNext()).toEqual(null);
-    
+
     });
-    
 
 });

@@ -1,18 +1,18 @@
-import { LinkedNode } from "../../src/Nodes/LinkedNode";
+import { LinkedNode } from '../../src/Nodes/LinkedNode';
 
 describe('LinkedNode', () => {
 
     let linkedNode: LinkedNode<number>;
 
     beforeEach(() => {
-        linkedNode = new LinkedNode<number>(1)
+        linkedNode = new LinkedNode<number>(1);
     });
 
     test('constructor', () => {
 
         expect(linkedNode.getValue()).toEqual(1);
         expect(linkedNode.getNext()).toEqual(null);
-    
+
     });
 
     test('getNext', () => {
@@ -21,7 +21,7 @@ describe('LinkedNode', () => {
 
         expect(linkedNode.getValue()).toEqual(1);
         expect(linkedNode.getNext().getValue()).toEqual(2);
-    
+
     });
 
     test('setNext(node, true)', () => {
@@ -29,7 +29,7 @@ describe('LinkedNode', () => {
         linkedNode.setNext(new LinkedNode(2));
 
         expect(linkedNode.getNext().getValue()).toEqual(2);
-    
+
     });
 
     test('setNext(node)', () => {
@@ -37,7 +37,7 @@ describe('LinkedNode', () => {
         linkedNode.setNext(new LinkedNode(2));
 
         expect(linkedNode.getNext().getValue()).toEqual(2);
-    
+
     });
 
     test('getValue', () => {
@@ -48,7 +48,7 @@ describe('LinkedNode', () => {
 
         linkedNode.setValue(13);
         expect(linkedNode.getValue()).toEqual(13);
-    
+
     });
 
 });
