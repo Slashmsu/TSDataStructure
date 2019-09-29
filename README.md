@@ -6,64 +6,6 @@ Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictio
 
 # Data Structures
 
-## Dictionary<T>
-
-#### size(): number
-
-Returns the number of entries (distinct keys) in this dictionary.
-
-#### isEmpty(): boolean
-
-Returns 'true' if Dictionary is empty and 'false' if no.
-
-#### put(key: string, value: T)
-
-Add new item to dictionary.
-
-#### get(key: string): T
-
-Returns item by given key.
-
-#### remove(key: string)
-
-Removes item from dictionary.
-
-#### clear()
-
-Removes all items from dictionary.
-
-#### keys(): string[]
-
-Returns string array of items keys.
-
-#### toArray(): T[] 
-
-Returns array of all items.
-
-#### containsKey(key: string): boolean 
-
-Checks is item with given key exist.
-
-```typescript
-
-const dictionary = new Dictionary<number>();
-dictionary.isEmpty(); // true
-dictionary.size(); // 0
-dictionary.put('someKey', 1);
-dictionary.get('someKey')
-dictionary.remove('someKey');
-
-dictionary.put('key1', 1);
-dictionary.put('key2', 2);
-dictionary.put('key3', 3);
-dictionary.keys(); // ['key1', 'key2', 'key3']
-dictionary.toArray(); // [1, 2, 3]
-dictionary.clear();
-
-dictionary.size(); // 0
-
-```
-
 ## LinkedList<T>
 
 1->2->3->4
@@ -145,6 +87,64 @@ doubleLinkedList.append(2);
 doubleLinkedList.size(); // 2
 doubleLinkedList.toArray(); // [1,2]
 doubleLinkedList.getLast(); // 2
+
+```
+
+## Dictionary<T>
+
+#### size(): number
+
+Returns the number of entries (distinct keys) in this dictionary.
+
+#### isEmpty(): boolean
+
+Returns 'true' if Dictionary is empty and 'false' if no.
+
+#### put(key: string, value: T)
+
+Add new item to dictionary.
+
+#### get(key: string): T
+
+Returns item by given key.
+
+#### remove(key: string)
+
+Removes item from dictionary.
+
+#### clear()
+
+Removes all items from dictionary.
+
+#### keys(): string[]
+
+Returns string array of items keys.
+
+#### toArray(): T[] 
+
+Returns array of all items.
+
+#### containsKey(key: string): boolean 
+
+Checks is item with given key exist.
+
+```typescript
+
+const dictionary = new Dictionary<number>();
+dictionary.isEmpty(); // true
+dictionary.size(); // 0
+dictionary.put('someKey', 1);
+dictionary.get('someKey')
+dictionary.remove('someKey');
+
+dictionary.put('key1', 1);
+dictionary.put('key2', 2);
+dictionary.put('key3', 3);
+dictionary.keys(); // ['key1', 'key2', 'key3']
+dictionary.toArray(); // [1, 2, 3]
+dictionary.clear();
+
+dictionary.size(); // 0
 
 ```
 
