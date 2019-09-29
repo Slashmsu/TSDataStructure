@@ -199,8 +199,8 @@ queue.size(); // 2
 ```
 
 # Todo
-### BinaryTree
-### Graph
+#### 1) BinaryTree
+#### 2) Graph
 
 
 If you have an advice, please feel free to contact with me
