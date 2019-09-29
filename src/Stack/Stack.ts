@@ -29,10 +29,17 @@ export class Stack<T> {
     // Public methods
     // =========================================================================================================================================================
 
-    push(val: T) {
-        this._store.push(val);
+    /**
+     * Pushes value to stack
+     * @param value
+     */
+    push(value: T) {
+        this._store.push(value);
     }
 
+    /**
+     * Fetch a value from the stack
+     */
     pop(): T | null {
 
         if (this._store.length > 0) {
@@ -42,6 +49,9 @@ export class Stack<T> {
         return null;
     }
 
+    /**
+     * Returns the size of stack
+     */
     size(): number {
 
         return this._store.length;
