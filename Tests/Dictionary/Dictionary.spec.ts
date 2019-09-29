@@ -1,4 +1,4 @@
-import { Dictionary } from "../src/Dictionary";
+import { Dictionary } from "../../src/Dictionary/Dictionary";
 
 describe('Dictionary', () => {
 
