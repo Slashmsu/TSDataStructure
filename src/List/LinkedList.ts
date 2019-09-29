@@ -43,12 +43,12 @@ export class LinkedList<T> {
     /**
      * Returns 'true' if 'LinkedList' is empty and 'false' if no.
      * */
-    public isEmpty () {
+    public isEmpty (): boolean {
         return !this._head;
     }
 
     /**
-     * Returns amount of nodes
+     * Returns the amount of nodes
      * */
     public size(): number {
 
