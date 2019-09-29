@@ -2,7 +2,7 @@
      Author: Bakhtier Gaibulloev
 */
 
-import {DoubleLinkedNode} from "./DoubleLinkedNode";
+import {DoubleLinkedNode} from "./Nodes/DoubleLinkedNode";
 
 /**
  *@param T type of DoubleLinkedList items.

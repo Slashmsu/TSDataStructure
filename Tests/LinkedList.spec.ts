@@ -36,7 +36,6 @@ describe('LinkedList', () => {
  
         expect(doubleLinkedList.size()).toEqual(0);
 
-
         doubleLinkedList.append(1);
         doubleLinkedList.append(2);
         doubleLinkedList.append(3);

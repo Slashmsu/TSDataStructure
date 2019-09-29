@@ -2,7 +2,7 @@
      Author: Bakhtier Gaibulloev
 */
 
-import {ListNode} from "./ListNode";
+import {LinkedNode} from "./Nodes/LinkedNode";
 
 /**
  *@param T type of LinkedList items.
@@ -17,8 +17,8 @@ export class LinkedList<T> {
     // Private properties
     //=========================================================================================================================================================
 
-    private _head: ListNode<T> | null;
-    private _last: ListNode<T> | null;
+    private _head: LinkedNode<T> | null;
+    private _last: LinkedNode<T> | null;
 
     //========================================================================================================================================================
     // Constructor
@@ -36,7 +36,7 @@ export class LinkedList<T> {
     /**
      * Returns 'Head' node
      * */
-    public getHead(): ListNode<T> | null {
+    public getHead(): LinkedNode<T> | null {
         return !this._head ? null : this._head;
     }
 
@@ -57,7 +57,7 @@ export class LinkedList<T> {
         }
 
         let result = 0;
-        let node: ListNode<T>;
+        let node: LinkedNode<T>;
         node = this._head;
         while(node !== null) {
             node = node.getNext();
@@ -73,11 +73,11 @@ export class LinkedList<T> {
     public append (value: T): LinkedList<T> {
 
         if (this.isEmpty()) {
-            this._head = new ListNode<T>(value);
+            this._head = new LinkedNode<T>(value);
             this._last = this._head;
         } else {
 
-            const node = new ListNode(value);
+            const node = new LinkedNode(value);
 
             if(this._last && this._head) {
 
@@ -96,7 +96,7 @@ export class LinkedList<T> {
     /**
      * Returns 'Last' node
      * */
-    public getLast(): ListNode<T> | null {
+    public getLast(): LinkedNode<T> | null {
         return !this._last ? null : this._last;
     }
 
@@ -110,7 +110,7 @@ export class LinkedList<T> {
             return result;
         }
 
-        let node: ListNode<T>;
+        let node: LinkedNode<T>;
         node = this._head;
         while(node !== null) {
             result.push(node.getValue());

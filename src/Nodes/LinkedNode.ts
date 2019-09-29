@@ -3,9 +3,9 @@
 */
 
 /**
- *@param T type of ListNode items.
+ *@param T type of LinkedNode items.
  */
-export class ListNode<T> {
+export class LinkedNode<T> {
 
     //=========================================================================================================================================================
     // Public properties
@@ -16,13 +16,13 @@ export class ListNode<T> {
     //=========================================================================================================================================================
 
     private _value: T | null;
-    private _next?: ListNode<T> | null;
+    private _next?: LinkedNode<T> | null;
 
     //========================================================================================================================================================
     // Constructor
     // =========================================================================================================================================================
 
-    constructor(value?: T | null, next?: ListNode<T>) {
+    constructor(value?: T | null, next?: LinkedNode<T>) {
         this._value = value;
         this._next = next;
     }
@@ -34,7 +34,7 @@ export class ListNode<T> {
     /**
      * Set given value to the node
      * */
-    public setValue(_value: T): ListNode<T> | null {
+    public setValue(_value: T): LinkedNode<T> | null {
 
         if (!this)
             return null;
@@ -56,14 +56,14 @@ export class ListNode<T> {
     /**
      * Returns 'Next' node
      * */
-    public getNext(): ListNode<T> | null {
+    public getNext(): LinkedNode<T> | null {
         return !this._next ? null : this._next;
     }
 
     /**
      * Sets given SingleListNode as 'Next' node to the 'Current' node
      * */
-    public setNext(next: ListNode<T> | null): ListNode<T> | null {
+    public setNext(next: LinkedNode<T> | null): LinkedNode<T> | null {
 
         this._next = next;
 
