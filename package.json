@@ -1,7 +1,7 @@
 {
-  "name": "tsdatastructure",
-  "version": "0.1.1",
-  "description": "Collection of data structures",
+  "name": "datastructure-ts",
+  "version": "0.1.2",
+  "description": "Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...) for TypeScript.",
   "scripts": {
     "test": "jest",
     "test-watch": "npm t -- --watch"

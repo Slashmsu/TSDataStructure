@@ -4,6 +4,7 @@
         "max-line-length": [false],
         "variable-name": [false],
         "no-increment-decrement": [false],
+        "no-parameter-reassignment": [false],
         "ter-indent": [false]
     }
 }
