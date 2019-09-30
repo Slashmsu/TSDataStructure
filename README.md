@@ -220,6 +220,12 @@ binaryTree.getRoot().getLeft().append(5);
 binaryTree.getRoot().getRight().append(6);
 binaryTree.getRoot().getRight().append(7);
 
+//          1
+//        /   \
+//       2     3 
+//      / \   / \
+//     4   5 6   7
+
 binaryTree.findNode(6).getValue(); // 6
 
 ```
