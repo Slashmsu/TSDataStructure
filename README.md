@@ -198,7 +198,7 @@ queue.size(); // 2
 
 ```
 
-## BinaryTreeNode<T>
+## BinaryTree<T>
 
 #### getRoot(): BinaryTreeNode<T>
 
