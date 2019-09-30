@@ -8,10 +8,18 @@ export class BinaryTree<T> {
         this._root = new BinaryTreeNode(value);
     }
 
+    /**
+     * Returns 'root' node
+     */
     getRoot(): BinaryTreeNode<T> {
         return this._root;
     }
 
+    /**
+     * Returns node with a given value
+     * @param value
+     * @param node
+     */
     findNode(value: T, node: BinaryTreeNode<T> = null): BinaryTreeNode<T> {
 
         if (this._root === null) {

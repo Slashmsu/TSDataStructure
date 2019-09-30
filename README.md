@@ -164,7 +164,7 @@ Returns the size of stack
 
 ```typescript
 
-const stack: Stack<number>;
+const stack = new Stack<number>();
 stack.push(1);
 stack.push(2);
 stack.push(3);
@@ -189,7 +189,7 @@ Returns the size of stack
 
 ```typescript
 
-const queue: Queue<number>;
+const queue = new Queue<number>();
 queue.push(1);
 queue.push(2);
 queue.push(3);
@@ -198,9 +198,34 @@ queue.size(); // 2
 
 ```
 
+## BinaryTreeNode<T>
+
+#### getRoot(): BinaryTreeNode<T>
+
+Returns 'root' node
+
+#### findNode(value: T, node: BinaryTreeNode<T> = null): BinaryTreeNode<T>
+
+Returns node with a given value
+
+```typescript
+
+const binaryTree = new BinaryTree<number>(1);
+binaryTree.getRoot().append(2);
+binaryTree.getRoot().append(3);
+
+binaryTree.getRoot().getLeft().append(4);
+binaryTree.getRoot().getLeft().append(5);
+
+binaryTree.getRoot().getRight().append(6);
+binaryTree.getRoot().getRight().append(7);
+
+binaryTree.findNode(6).getValue(); // 6
+
+```
+
 # Todo
-#### 1) BinaryTree
-#### 2) Graph
+#### 1) Graph
 
 
 If you have an advice, please feel free to contact with me
