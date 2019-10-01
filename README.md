@@ -2,7 +2,7 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/slashmsu/typestructure/badge/master)](https://www.codefactor.io/repository/github/slashmsu/typestructure/overview/master)
 
-Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...)
+Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...) for TypeScript.
 
 # Installation
 
