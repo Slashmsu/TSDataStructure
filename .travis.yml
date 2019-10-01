@@ -2,6 +2,6 @@ language : node_js
 node_js :
  - stable
 install:
- - npm install
+ - npm install --dev
 script:
- - npm run test-watch
+ - npm run test
