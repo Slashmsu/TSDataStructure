@@ -4,6 +4,12 @@
 
 Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...)
 
+# Installation
+
+```
+npm i datastructure-ts --save
+```
+
 # Data Structures
 
 ## LinkedList<T>
