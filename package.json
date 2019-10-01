@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "description": "Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...) for TypeScript.",
   "scripts": {
-    "test": "jest",
+    "test": "jest ./tests",
     "test-watch": "npm t -- --watch"
   },
   "repository": {
