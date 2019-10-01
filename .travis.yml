@@ -9,4 +9,4 @@ before_install:
 install:
 - npm install
 script:
-- npx jest
+- npx jest /Tests
