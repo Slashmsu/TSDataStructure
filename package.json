@@ -3,8 +3,10 @@
   "version": "0.1.4",
   "description": "Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...) for TypeScript.",
   "scripts": {
-    "test": "mocha -r ts-node/register ./tests/**/*.spec.ts",
-    "cover": "nyc mocha -r ts-node/register ./tests/**/*.spec.ts"
+    "test": "mocha dist/tests/**/*.spec.js  --reporter spec",
+    "test_watch": "mocha dist/tests/**/*.spec.js  --reporter spec --watch",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha dist/tests/**/*.spec.js  -- -R spec",
+    "cover:nyx": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -43,9 +45,10 @@
     "@types/chai": "^4.2.3",
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.6",
+    "istanbul": "^0.4.5",
     "mocha": "^6.2.1",
     "nyc": "^14.1.1",
-    "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
     "tslint-config-airbnb": "^5.11.2",
     "typescript": "^3.6.3"
