@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "description": "Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...) for TypeScript.",
   "directories": {
-    "test": "test"
+    "tests": "tests"
   },
   "scripts": {
     "test": "mocha -r ts-node/register ./Tests/**/*.spec.ts",
