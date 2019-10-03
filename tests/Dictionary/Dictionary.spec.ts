@@ -1,5 +1,4 @@
 import { Dictionary } from '../../src';
-import { expect } from 'chai';
 
 describe('Dictionary', () => {
 
@@ -9,96 +8,96 @@ describe('Dictionary', () => {
         dictionary = new Dictionary<number>();
     });
 
-    it('constructor()', () => {
+    test('constructor()', () => {
 
-        expect(dictionary.isEmpty()).to.equal(true);
-        expect(dictionary.size()).to.equal(0);
+        expect(dictionary.isEmpty()).toEqual(true);
+        expect(dictionary.size()).toEqual(0);
 
     });
 
-    it('isEmpty()', () => {
+    test('isEmpty()', () => {
 
-        expect(dictionary.isEmpty()).to.equal(true);
+        expect(dictionary.isEmpty()).toEqual(true);
         dictionary.put('key', 1);
-        expect(dictionary.isEmpty()).to.equal(false);
+        expect(dictionary.isEmpty()).toEqual(false);
 
     });
 
-    it('size()', () => {
+    test('size()', () => {
 
-        expect(dictionary.size()).to.equal(0);
+        expect(dictionary.size()).toEqual(0);
         dictionary.put('key', 1);
-        expect(dictionary.size()).to.equal(1);
+        expect(dictionary.size()).toEqual(1);
 
     });
 
-    it('put()', () => {
-
-        dictionary.put('key', 1);
-        expect(dictionary.get('key')).to.equal(1);
-
-    });
-
-    it('get()', () => {
+    test('put()', () => {
 
         dictionary.put('key', 1);
-        expect(dictionary.get('key')).to.equal(1);
+        expect(dictionary.get('key')).toEqual(1);
 
     });
 
-    it('remove()', () => {
+    test('get()', () => {
+
+        dictionary.put('key', 1);
+        expect(dictionary.get('key')).toEqual(1);
+
+    });
+
+    test('remove()', () => {
 
         dictionary.put('key', 1);
         dictionary.remove('key');
-        expect(dictionary.size()).to.equal(0);
+        expect(dictionary.size()).toEqual(0);
 
     });
 
-    it('clear()', () => {
+    test('clear()', () => {
 
         dictionary.put('key1', 1);
         dictionary.put('key2', 2);
         dictionary.put('key3', 3);
         dictionary.clear();
-        expect(dictionary.size()).to.equal(0);
+        expect(dictionary.size()).toEqual(0);
 
     });
 
-    it('keys()', () => {
+    test('keys()', () => {
 
         dictionary.put('key1', 1);
         dictionary.put('key2', 2);
         dictionary.put('key3', 3);
-        expect(dictionary.keys()).deep.equal(['key1', 'key2', 'key3']);
+        expect(dictionary.keys()).toEqual(['key1', 'key2', 'key3']);
 
     });
 
-    it('toArray()', () => {
+    test('toArray()', () => {
 
         dictionary.put('key1', 1);
         dictionary.put('key2', 2);
         dictionary.put('key3', 3);
-        expect(dictionary.toArray()).deep.equal([1, 2, 3]);
+        expect(dictionary.toArray()).toEqual([1, 2, 3]);
 
     });
 
-    it('setValue()', () => {
+    test('setValue()', () => {
 
         dictionary.put('key1', 1);
         dictionary.put('key2', 2);
         dictionary.put('key3', 3);
-        expect(dictionary.setValue('key2', 7)).to.equal(true);
-        expect(dictionary.setValue('key5', 9)).to.equal(false);
+        expect(dictionary.setValue('key2', 7)).toEqual(true);
+        expect(dictionary.setValue('key5', 9)).toEqual(false);
 
     });
 
-    it('containsKey()', () => {
+    test('containsKey()', () => {
 
         dictionary.put('key1', 1);
         dictionary.put('key2', 2);
         dictionary.put('key3', 3);
-        expect(dictionary.containsKey('key2')).to.equal(true);
-        expect(dictionary.containsKey('key5')).to.equal(false);
+        expect(dictionary.containsKey('key2')).toEqual(true);
+        expect(dictionary.containsKey('key5')).toEqual(false);
 
     });
 

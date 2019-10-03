@@ -1,7 +1,6 @@
-sudo: false
-language: node_js
-node_js:
-- stable
+language : node_js
+node_js :
+ - stable
 cache:
   directories:
   - node_modules
@@ -10,4 +9,4 @@ before_install:
 install:
 - npm install
 script:
-- npm run cover 
+- npm test
