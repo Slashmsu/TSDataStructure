@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "test-watch": "npm t -- --watch",
-    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js - - -R spec"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
   "devDependencies": {
     "@types/jest": "^24.0.18",
     "coveralls": "^3.0.6",
+    "istanbul": "^0.4.5",
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
     "tslint": "^5.20.0",
