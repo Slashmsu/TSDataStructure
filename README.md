@@ -4,6 +4,8 @@
 
 [![Build Status](https://travis-ci.org/Slashmsu/TSDataStructure.svg?branch=master)](https://travis-ci.org/Slashmsu/TSDataStructure)
 
+[![Coverage Status](https://coveralls.io/repos/github/Slashmsu/TSDataStructure/badge.svg)](https://coveralls.io/github/Slashmsu/TSDataStructure)
+
 Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...) for TypeScript.
 
 # Installation
