@@ -4,8 +4,6 @@
 
 [![Build Status](https://travis-ci.org/Slashmsu/TSDataStructure.svg?branch=master)](https://travis-ci.org/Slashmsu/TSDataStructure)
 
-[![Coverage Status](https://coveralls.io/repos/github/Slashmsu/TSDataStructure/badge.svg)](https://coveralls.io/github/Slashmsu/TSDataStructure)
-
 Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...) for TypeScript.
 
 # Installation
@@ -168,7 +166,7 @@ Pushes value to stack
 
 Fetchs the last value from the stack
 
-#### peek(): T | null
+#### peek(): T
 
 The method returns the element at the top of the Stack else returns NULL if the Stack is empty.
 
@@ -202,7 +200,7 @@ Pushes value to stack
 
 Fetchs the first value from the stack
 
-#### peek(): T | null
+#### peek(): T
 
 The method returns the element at the top of the Queue else returns NULL if the Queue is empty.
 
