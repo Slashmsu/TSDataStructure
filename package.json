@@ -6,8 +6,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha -r ts-node/register ./Test/**/*.spec.ts",
-    "cover": "nyc mocha -r ts-node/register ./Test/**/*.spec.ts"
+    "test": "mocha -r ts-node/register ./Tests/**/*.spec.ts",
+    "cover": "nyc mocha -r ts-node/register ./Tests/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
