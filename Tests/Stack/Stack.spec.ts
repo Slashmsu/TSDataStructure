@@ -19,6 +19,12 @@ describe('Stack', () => {
 
     });
 
+    it('pop if stacl is empty', () => {
+
+        expect(stack.pop()).equal(null);
+
+    });
+
     it('size', () => {
 
         stack.push(1);

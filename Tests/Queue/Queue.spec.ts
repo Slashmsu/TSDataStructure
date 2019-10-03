@@ -19,6 +19,12 @@ describe('Queue', () => {
 
     });
 
+    it('pop if queue is empty', () => {
+
+        expect(queue.pop()).equal(null);
+
+    });
+
     it('size', () => {
 
         queue.push(1);
