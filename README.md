@@ -1,6 +1,8 @@
 # TSDataStructure
 
-[![CodeFactor](https://www.codefactor.io/repository/github/slashmsu/typestructure/badge/master)](https://www.codefactor.io/repository/github/slashmsu/typestructure/overview/master)
+[![CodeFactor](https://www.codefactor.io/repository/github/slashmsu/tsdatastructure/badge)](https://www.codefactor.io/repository/github/slashmsu/tsdatastructure)
+
+[![Build Status](https://travis-ci.org/Slashmsu/TSDataStructure.svg?branch=master)](https://travis-ci.org/Slashmsu/TSDataStructure)
 
 Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...) for TypeScript.
 
