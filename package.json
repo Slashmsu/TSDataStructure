@@ -3,9 +3,8 @@
   "version": "0.1.4",
   "description": "Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...) for TypeScript.",
   "scripts": {
-    "test": "jest",
-    "test-watch": "npm t -- --watch",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/*.js - - -R spec"
+    "test": "mocha -r ts-node/register ./tests/**/*.spec.ts",
+    "test:watch": "npm run test -- --watch -R min"
   },
   "repository": {
     "type": "git",
@@ -27,11 +26,11 @@
   },
   "homepage": "https://github.com/Slashmsu/TSDataStructure#readme",
   "devDependencies": {
-    "@types/jest": "^24.0.18",
-    "coveralls": "^3.0.6",
-    "istanbul": "^0.4.5",
-    "jest": "^24.9.0",
-    "ts-jest": "^24.1.0",
+    "@types/chai": "^4.2.3",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.1",
+    "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
     "tslint-config-airbnb": "^5.11.2",
     "typescript": "^3.6.3"

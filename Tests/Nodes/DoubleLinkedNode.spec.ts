@@ -1,4 +1,5 @@
 import { DoubleLinkedNode } from '../../src/Nodes/DoubleLinkedNode';
+import { expect } from 'chai';
 
 describe('DoubleLinkedNode', () => {
 
@@ -8,73 +9,73 @@ describe('DoubleLinkedNode', () => {
         doubleLinkedNode = new DoubleLinkedNode<number>(1);
     });
 
-    test('constructor', () => {
+    it('constructor', () => {
 
-        expect(doubleLinkedNode.getValue()).toEqual(1);
-        expect(doubleLinkedNode.getNext()).toEqual(null);
-        expect(doubleLinkedNode.getPrevious()).toEqual(null);
+        expect(doubleLinkedNode.getValue()).to.equal(1);
+        expect(doubleLinkedNode.getNext()).to.equal(null);
+        expect(doubleLinkedNode.getPrevious()).to.equal(null);
 
     });
 
-    test('getNext', () => {
+    it('getNext', () => {
 
         doubleLinkedNode.setNext(new DoubleLinkedNode(2));
 
-        expect(doubleLinkedNode.getValue()).toEqual(1);
-        expect(doubleLinkedNode.getNext().getValue()).toEqual(2);
+        expect(doubleLinkedNode.getValue()).to.equal(1);
+        expect(doubleLinkedNode.getNext().getValue()).to.equal(2);
 
     });
 
-    test('setNext(node, true)', () => {
+    it('setNext(node, true)', () => {
 
         doubleLinkedNode.setNext(new DoubleLinkedNode(2), true);
 
-        expect(doubleLinkedNode.getNext().getValue()).toEqual(2);
-        expect(doubleLinkedNode.getNext().getPrevious().getValue()).toEqual(1);
+        expect(doubleLinkedNode.getNext().getValue()).to.equal(2);
+        expect(doubleLinkedNode.getNext().getPrevious().getValue()).to.equal(1);
 
     });
 
-    test('setNext(node)', () => {
+    it('setNext(node)', () => {
 
         doubleLinkedNode.setNext(new DoubleLinkedNode(2));
 
-        expect(doubleLinkedNode.getNext().getValue()).toEqual(2);
-        expect(doubleLinkedNode.getNext().getPrevious()).toEqual(null);
+        expect(doubleLinkedNode.getNext().getValue()).to.equal(2);
+        expect(doubleLinkedNode.getNext().getPrevious()).to.equal(null);
 
     });
 
-    test('getValue', () => {
-        expect(doubleLinkedNode.getValue()).toEqual(1);
+    it('getValue', () => {
+        expect(doubleLinkedNode.getValue()).to.equal(1);
     });
 
-    test('setValue', () => {
+    it('setValue', () => {
 
         doubleLinkedNode.setValue(13);
-        expect(doubleLinkedNode.getValue()).toEqual(13);
+        expect(doubleLinkedNode.getValue()).to.equal(13);
 
     });
 
-    test('getPrevious', () => {
+    it('getPrevious', () => {
 
         doubleLinkedNode.setNext(new DoubleLinkedNode(2), true);
 
-        expect(doubleLinkedNode.getNext().getPrevious().getValue()).toEqual(1);
+        expect(doubleLinkedNode.getNext().getPrevious().getValue()).to.equal(1);
 
     });
 
-    test('setPrevious(node, true)', () => {
+    it('setPrevious(node, true)', () => {
 
         doubleLinkedNode.setPrevious(new DoubleLinkedNode(2), true);
 
-        expect(doubleLinkedNode.getPrevious().getNext().getValue()).toEqual(1);
+        expect(doubleLinkedNode.getPrevious().getNext().getValue()).to.equal(1);
 
     });
 
-    test('setPrevious(node)', () => {
+    it('setPrevious(node)', () => {
 
         doubleLinkedNode.setPrevious(new DoubleLinkedNode(2));
 
-        expect(doubleLinkedNode.getPrevious().getNext()).toEqual(null);
+        expect(doubleLinkedNode.getPrevious().getNext()).to.equal(null);
 
     });
 

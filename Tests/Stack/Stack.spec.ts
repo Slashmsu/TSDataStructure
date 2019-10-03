@@ -1,4 +1,5 @@
 import { Stack } from '../../src/Stack/Stack';
+import { expect } from 'chai';
 
 describe('Stack', () => {
 
@@ -8,17 +9,17 @@ describe('Stack', () => {
         stack = new Stack<number>();
     });
 
-    test('push/pop', () => {
+    it('push/pop', () => {
 
         stack.push(1);
         stack.push(2);
         stack.push(3);
 
-        expect(stack.pop()).toEqual(3);
+        expect(stack.pop()).to.equal(3);
 
     });
 
-    test('size', () => {
+    it('size', () => {
 
         stack.push(1);
         stack.push(2);
@@ -26,7 +27,7 @@ describe('Stack', () => {
         stack.push(4);
         stack.push(5);
 
-        expect(stack.size()).toEqual(5);
+        expect(stack.size()).to.equal(5);
 
     });
 

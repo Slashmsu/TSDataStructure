@@ -1,4 +1,5 @@
 import { LinkedNode } from '../../src/Nodes/LinkedNode';
+import { expect } from 'chai';
 
 describe('LinkedNode', () => {
 
@@ -8,46 +9,46 @@ describe('LinkedNode', () => {
         linkedNode = new LinkedNode<number>(1);
     });
 
-    test('constructor', () => {
+    it('constructor', () => {
 
-        expect(linkedNode.getValue()).toEqual(1);
-        expect(linkedNode.getNext()).toEqual(null);
+        expect(linkedNode.getValue()).to.equal(1);
+        expect(linkedNode.getNext()).to.equal(null);
 
     });
 
-    test('getNext', () => {
+    it('getNext', () => {
 
         linkedNode.setNext(new LinkedNode(2));
 
-        expect(linkedNode.getValue()).toEqual(1);
-        expect(linkedNode.getNext().getValue()).toEqual(2);
+        expect(linkedNode.getValue()).to.equal(1);
+        expect(linkedNode.getNext().getValue()).to.equal(2);
 
     });
 
-    test('setNext(node, true)', () => {
+    it('setNext(node, true)', () => {
 
         linkedNode.setNext(new LinkedNode(2));
 
-        expect(linkedNode.getNext().getValue()).toEqual(2);
+        expect(linkedNode.getNext().getValue()).to.equal(2);
 
     });
 
-    test('setNext(node)', () => {
+    it('setNext(node)', () => {
 
         linkedNode.setNext(new LinkedNode(2));
 
-        expect(linkedNode.getNext().getValue()).toEqual(2);
+        expect(linkedNode.getNext().getValue()).to.equal(2);
 
     });
 
-    test('getValue', () => {
-        expect(linkedNode.getValue()).toEqual(1);
+    it('getValue', () => {
+        expect(linkedNode.getValue()).to.equal(1);
     });
 
-    test('setValue', () => {
+    it('setValue', () => {
 
         linkedNode.setValue(13);
-        expect(linkedNode.getValue()).toEqual(13);
+        expect(linkedNode.getValue()).to.equal(13);
 
     });
 

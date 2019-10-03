@@ -1,4 +1,5 @@
 import { LinkedList } from '../../src/List/LinkedList';
+import { expect } from 'chai';
 
 describe('LinkedList', () => {
 
@@ -8,73 +9,73 @@ describe('LinkedList', () => {
         linkedList = new LinkedList<number>();
     });
 
-    test('constructor', () => {
+    it('constructor', () => {
 
-        expect(linkedList.getHead()).toEqual(null);
-        expect(linkedList.getLast()).toEqual(null);
+        expect(linkedList.getHead()).to.equal(null);
+        expect(linkedList.getLast()).to.equal(null);
 
     });
 
-    test('getHead', () => {
+    it('getHead', () => {
 
-        expect(linkedList.getHead()).toEqual(null);
+        expect(linkedList.getHead()).to.equal(null);
         linkedList.append(1);
 
-        expect(linkedList.getHead().getValue()).toEqual(1);
+        expect(linkedList.getHead().getValue()).to.equal(1);
 
     });
 
-    test('isEmpty', () => {
-        expect(linkedList.isEmpty()).toEqual(true);
+    it('isEmpty', () => {
+        expect(linkedList.isEmpty()).to.equal(true);
 
         linkedList.append(1);
-        expect(linkedList.isEmpty()).toEqual(false);
+        expect(linkedList.isEmpty()).to.equal(false);
 
     });
 
-    test('size', () => {
+    it('size', () => {
 
-        expect(linkedList.size()).toEqual(0);
-
-        linkedList.append(1);
-        linkedList.append(2);
-        linkedList.append(3);
-        linkedList.append(4);
-
-        expect(linkedList.size()).toEqual(4);
-
-    });
-
-    test('append', () => {
-        linkedList.append(1);
-
-        expect(linkedList.getHead().getValue()).toEqual(1);
-
-        linkedList.append(2);
-        linkedList.append(3);
-        linkedList.append(4);
-
-        expect(linkedList.getLast().getValue()).toEqual(4);
-
-    });
-
-    test('toArray()', () => {
+        expect(linkedList.size()).to.equal(0);
 
         linkedList.append(1);
         linkedList.append(2);
         linkedList.append(3);
         linkedList.append(4);
-        expect(linkedList.toArray()).toEqual([1, 2, 3, 4]);
+
+        expect(linkedList.size()).to.equal(4);
 
     });
 
-    test('getLast', () => {
+    it('append', () => {
+        linkedList.append(1);
+
+        expect(linkedList.getHead().getValue()).to.equal(1);
+
+        linkedList.append(2);
+        linkedList.append(3);
+        linkedList.append(4);
+
+        expect(linkedList.getLast().getValue()).to.equal(4);
+
+    });
+
+    it('toArray()', () => {
+
+        linkedList.append(1);
+        linkedList.append(2);
+        linkedList.append(3);
+        linkedList.append(4);
+        expect(linkedList.toArray()).deep.equal([1, 2, 3, 4]);
+
+    });
+
+    it('getLast', () => {
         linkedList.append(1);
         linkedList.append(2);
         linkedList.append(3);
         linkedList.append(4);
 
-        expect(linkedList.getLast().getValue()).toEqual(4);
+        expect(linkedList.getLast().getValue()).to.equal(4);
 
     });
 
