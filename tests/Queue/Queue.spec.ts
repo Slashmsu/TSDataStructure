@@ -16,12 +16,33 @@ describe('Queue', () => {
         queue.push(3);
 
         expect(queue.pop()).equal(1);
+        expect(queue.size()).equal(2);
 
     });
 
     it('pop if queue is empty', () => {
 
         expect(queue.pop()).equal(null);
+
+    });
+
+    it('peek', () => {
+
+        queue.push(1);
+        queue.push(2);
+        queue.push(3);
+
+        expect(queue.peek()).equal(3);
+
+    });
+
+    it('toArray', () => {
+
+        queue.push(1);
+        queue.push(2);
+        queue.push(3);
+
+        expect(queue.toArray()).deep.equal([1, 2, 3]);
 
     });
 

@@ -168,9 +168,18 @@ Pushes value to stack
 
 Fetchs the last value from the stack
 
+#### peek(): T | null
+
+The method returns the element at the top of the Stack else returns NULL if the Stack is empty.
+
+
 #### size(): T
 
 Returns the size of stack
+
+#### toArray(): T[]
+
+Returns array of all items
 
 ```typescript
 
@@ -193,9 +202,18 @@ Pushes value to stack
 
 Fetchs the first value from the stack
 
+#### peek(): T | null
+
+The method returns the element at the top of the Queue else returns NULL if the Queue is empty.
+
 #### size(): T
 
-Returns the size of stack
+Returns the size of queue
+
+#### toArray(): T[]
+
+Returns array of all items
+
 
 ```typescript
 

@@ -47,9 +47,31 @@ export class Queue<T> {
         return null;
     }
 
+    /**
+     * The method returns the element at the top of the Queue else returns NULL if the Queu is empty.
+     */
+    peek(): T | null {
+
+        if (this._store.length > 0) {
+            return this._store[this._store.length - 1];
+        }
+
+        return null;
+    }
+
+    /**
+    * Returns the size of stack
+    */
     size(): number {
 
         return this._store.length;
+    }
+
+    /**
+    * Returns array of all items.
+    */
+    toArray(): T[] {
+        return this._store;
     }
 
     // =========================================================================================================================================================

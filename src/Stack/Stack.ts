@@ -38,7 +38,7 @@ export class Stack<T> {
     }
 
     /**
-     * Fetch a value from the stack
+     * The element is popped from the top of the stack and is removed from the same.
      */
     pop(): T | null {
 
@@ -50,11 +50,30 @@ export class Stack<T> {
     }
 
     /**
+     * The method returns the element at the top of the Stack else returns NULL if the Stack is empty.
+     */
+    peek(): T | null {
+
+        if (this._store.length > 0) {
+            return this._store[0];
+        }
+
+        return null;
+    }
+
+    /**
      * Returns the size of stack
      */
     size(): number {
 
         return this._store.length;
+    }
+
+    /**
+    * Returns array of all items
+    */
+    toArray(): T[] {
+        return this._store;
     }
 
     // =========================================================================================================================================================

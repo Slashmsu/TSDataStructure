@@ -16,12 +16,33 @@ describe('Stack', () => {
         stack.push(3);
 
         expect(stack.pop()).equal(3);
+        expect(stack.size()).equal(2);
 
     });
 
     it('pop if stacl is empty', () => {
 
         expect(stack.pop()).equal(null);
+
+    });
+
+    it('peek', () => {
+
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        expect(stack.peek()).equal(1);
+
+    });
+
+    it('toArray', () => {
+
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        expect(stack.toArray()).deep.equal([1, 2, 3]);
 
     });
 
