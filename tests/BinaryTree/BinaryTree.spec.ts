@@ -13,8 +13,8 @@ describe('BinaryTree', () => {
         binaryTree.getRoot().getLeft().append(4);
         binaryTree.getRoot().getLeft().append(5);
 
-        binaryTree.getRoot().getRight().append(6);
-        binaryTree.getRoot().getRight().append(6);
+        binaryTree.getRoot().getRight().setLeft(6);
+        binaryTree.getRoot().getRight().setRight(7);
 
         expect(binaryTree.getRoot().getValue()).equal(1);
 

@@ -227,8 +227,8 @@ binaryTree.getRoot().append(3);
 binaryTree.getRoot().getLeft().append(4);
 binaryTree.getRoot().getLeft().append(5);
 
-binaryTree.getRoot().getRight().append(6);
-binaryTree.getRoot().getRight().append(7);
+binaryTree.getRoot().getRight().setLeft(6);
+binaryTree.getRoot().getRight().setRight(7);
 
 //          1
 //        /   \
