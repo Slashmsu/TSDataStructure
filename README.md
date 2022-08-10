@@ -136,6 +136,26 @@ Returns array of all items.
 
 Checks is item with given key exist.
 
+#### insert(afterPosition: number, value: T): DoubleLinkedList<T>
+
+Inserts given value to the DoubleLinkedList and returns updated DoubleLinkedList.
+
+#### insertLast(value: T): DoubleLinkedList<T>
+
+Inserts given value to the DoubleLinkedList and returns updated DoubleLinkedList.
+
+#### insertLast(value: T): DoubleLinkedList<T>
+
+Insert given value to the 'DoubleLinkedList' at the end and returns updated 'DoubleLinkedList'.
+
+#### insertFirst(value: T): DoubleLinkedList<T>
+
+Inserts given value to the 'DoubleLinkedList' at the beginning and returns updated 'DoubleLinkedList'.
+
+#### get(index: number): DoubleLinkedList<T>
+
+Get node by given index.
+
 ```typescript
 
 const dictionary = new Dictionary<number>();

@@ -122,7 +122,7 @@ export class DoubleLinkedList<T> {
     }
 
     /**
-     * Inserts given value to the DoubleLinkedList and returns updated DoubleLinkedList
+     * Inserts given value to the DoubleLinkedList and returns updated DoubleLinkedList.
      * */
     public insert(afterPosition: number, value: T): DoubleLinkedList<T> {
 
