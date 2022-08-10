@@ -1,6 +1,6 @@
 {
   "name": "datastructure-ts",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...) for TypeScript.",
   "scripts": {
     "build": "tsc",
