@@ -60,13 +60,13 @@ linkedList.getLast(); // 2
 
 1<->2<->3<->4
 
-#### getHead(): LinkedNode<T>
+#### getHead(): DoubleLinkedList<T>
 
 Returns the 'Head' node
 
 #### isEmpty(): boolean
 
-Returns 'true' if 'LinkedList' is empty and 'false' if no.
+Returns 'true' if 'DoubleLinkedList' is empty and 'false' if no.
 
 #### size(): number
 
@@ -74,7 +74,7 @@ Returns the amount of nodes
 
 #### append(value: T): LinkedList<T>
 
-Append given value to the 'linkedList' and returns updated 'LinkedList'
+Append given value to the 'DoubleLinkedList' and returns updated 'DoubleLinkedList'
 
 #### getLast(): LinkedNode<T>
 
