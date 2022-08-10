@@ -88,4 +88,59 @@ describe('DoubleLinkedList', () => {
         expect(doubleLinkedList.getLast().getValue()).equal(4);
     });
 
+    it('insert as first item', () => {
+        doubleLinkedList.append(1);
+        doubleLinkedList.append(2);
+        doubleLinkedList.append(3);
+        doubleLinkedList.append(4);
+
+        doubleLinkedList.insertFirst(0);
+        expect(doubleLinkedList.getHead().getValue()).equal(0);
+    });
+
+    it('insert as last item', () => {
+        doubleLinkedList.append(1);
+        doubleLinkedList.append(2);
+        doubleLinkedList.append(3);
+        doubleLinkedList.append(4);
+
+        doubleLinkedList.insertLast(5);
+        expect(doubleLinkedList.getLast().getValue()).equal(5);
+    });
+
+    it('get item by position', () => {
+        doubleLinkedList.append(1);
+        doubleLinkedList.append(2);
+        doubleLinkedList.append(3);
+        doubleLinkedList.append(4);
+
+        expect(doubleLinkedList.get(1).getValue()).equal(2);
+    });
+
+    it('get item by position - out of the range', () => {
+        doubleLinkedList.append(1);
+        doubleLinkedList.append(2);
+        doubleLinkedList.append(3);
+        doubleLinkedList.append(4);
+
+        expect(() => doubleLinkedList.get(5)).to.throw(Error);
+    });
+
+    it('get item by position - doubleLinkedList is empty', () => {
+        expect(doubleLinkedList.get(10)).equal(null);
+    });
+
+    it('inserts value after third element', () => {
+        doubleLinkedList.append(1);
+        doubleLinkedList.append(2);
+        doubleLinkedList.append(3);
+        doubleLinkedList.append(4);
+
+        doubleLinkedList.insert(3, 16);
+        expect(doubleLinkedList.get(2).getValue()).equal(3);
+        expect(doubleLinkedList.get(3).getValue()).equal(16);
+        expect(doubleLinkedList.get(4).getValue()).equal(4);
+    });
+
+
 });

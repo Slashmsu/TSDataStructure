@@ -34,7 +34,7 @@ export class DoubleLinkedList<T> {
     // =========================================================================================================================================================
 
     /**
-     * Returns 'Head' node
+     * Returns 'Head' node.
      * */
     public getHead(): DoubleLinkedNode<T> | null {
         return !this._head ? null : this._head;
@@ -48,7 +48,7 @@ export class DoubleLinkedList<T> {
     }
 
     /**
-     * Returns amount of nodes
+     * Returns amount of nodes.
      * */
     public size(): number {
 
@@ -68,7 +68,7 @@ export class DoubleLinkedList<T> {
     }
 
     /**
-     * Append given value to the 'linkedList' and returns updated 'LinkedList'
+     * Append given value to the 'linkedList' and returns updated 'LinkedList'.
      * */
     public append (value: T): DoubleLinkedList<T> {
 
@@ -95,7 +95,7 @@ export class DoubleLinkedList<T> {
     }
 
     /**
-     * Returns 'Last' node
+     * Returns 'Last' node.
      * */
     public getLast(): DoubleLinkedNode<T> | null {
         return !this._last ? null : this._last;
@@ -122,14 +122,113 @@ export class DoubleLinkedList<T> {
     }
 
     /**
-     * Inserts given value to the linkedList and returns updated LinkedList
+     * Inserts given value to the DoubleLinkedList and returns updated DoubleLinkedList
      * */
-    /*public insert (): LinkedList<T> {
+    public insert(afterPosition: number, value: T): DoubleLinkedList<T> {
 
-        // todo
+        if (this.isEmpty()) {
+            return this;
+        }
+
+        if (afterPosition < 0 || afterPosition > this.size()) {
+            throw new Error('Position is out of range');
+        }
+        if (afterPosition === 0) {
+            this.insertFirst(value);
+            return this;
+        }
+        if (afterPosition === this.size()) {
+            this.insertLast(value);
+            return this;
+        }
+        const node = new DoubleLinkedNode(value);
+        let current = this.getHead();
+        let previous = this.getHead();
+        let i = 0;
+        while (i < afterPosition) {
+            previous = current;
+            current = current.getNext();
+            i++;
+        }
+        previous.setNext(node);
+        node.setNext(current);
+        current.setPrevious(node);
+        node.setPrevious(previous);
 
         return this;
-    }*/
+    }
+
+    /**
+     * Insert given value to the 'DoubleLinkedList' at the end and returns updated 'DoubleLinkedList'.
+     * 
+     * @param value DoubleLinkedList
+     */
+    insertLast(value: T): DoubleLinkedList<T> {
+        
+        const node = new DoubleLinkedNode(value);
+
+        if (this.isEmpty()) {
+            this._head = node;
+            this._last = node;
+        } else {
+
+            if (this._last) {
+                this._last.setNext(node);
+                node.setPrevious(this._last);
+                this._last = node;
+            }
+        }
+
+        return this;
+    }
+
+    /**
+     * Inserts given value to the 'DoubleLinkedList' at the beginning and returns updated 'DoubleLinkedList'.
+     * 
+     * @param value DoubleLinkedList
+     */
+    insertFirst(value: T): DoubleLinkedList<T> {
+        const node = new DoubleLinkedNode(value);
+
+        if (this.isEmpty()) {
+            this._head = node;
+            this._last = node;
+        } else {
+
+            if (this._head) {
+                this._head.setPrevious(node);
+                node.setNext(this._head);
+                this._head = node;
+            }
+        }
+
+        return this;
+    }
+
+    /**
+     * Get node by given index.
+     * 
+     * @param index Index of node.
+     */
+    public get(index: number): DoubleLinkedNode<T> | null {
+
+        if (this.isEmpty()) {
+            return null;
+        }
+
+        if (index < 0 || index > this.size()) {
+            throw new Error('Position is out of range');
+        }
+
+        let current = this._head;
+        let i = 0;
+        while (i < index) {
+            current = current.getNext();
+            i++;
+        }
+
+        return current;
+    }
 
     /**
      * Print LinkedList
