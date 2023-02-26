@@ -34,10 +34,10 @@ export class BinaryTreeNode<T> {
 
     /**
      * Sets left node
-     * @param value
+     * @param node
      */
-    setLeft(value: T) {
-        this._left = new BinaryTreeNode<T>(value);
+    setLeft(node: BinaryTreeNode<T>) {
+        this._left = node;
     }
 
     /**
@@ -49,22 +49,22 @@ export class BinaryTreeNode<T> {
 
     /**
      * Sets right node
-     * @param value
+     * @param node BinaryTreeNode
      */
-    setRight(value: T) {
-        this._right = new BinaryTreeNode<T>(value);
+    setRight(node: BinaryTreeNode<T>) {
+        this._right = node;
     }
 
     /**
      * If append node to current node, if left node doesn't exists, sets left node,
      * otherwise sets right node, if both nodes are set doesn't anything
-     * @param value
+     * @param node BinaryTreeNode
      */
-    append(value: T) {
+    append(node: BinaryTreeNode<T>) {
         if (this.getLeft() === null) {
-            this.setLeft(value);
+            this.setLeft(node);
         } else if (this.getRight() === null) {
-            this.setRight(value);
+            this.setRight(node);
         }
     }
 

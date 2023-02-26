@@ -5,6 +5,7 @@
         "variable-name": [false],
         "no-increment-decrement": [false],
         "no-parameter-reassignment": [false],
-        "ter-indent": [false]
+        "ter-indent": [false],
+        "no-else-after-return": [false]
     }
 }
