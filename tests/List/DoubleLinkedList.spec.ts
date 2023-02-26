@@ -142,5 +142,4 @@ describe('DoubleLinkedList', () => {
         expect(doubleLinkedList.get(4).getValue()).equal(4);
     });
 
-
 });

@@ -78,9 +78,9 @@ describe('Dictionary', () => {
         dictionary.put('key2', 2);
         dictionary.put('key3', 3);
         expect(dictionary.toArray()).to.deep.equal([
-                {'key': 'key1', 'value': 1},
-                {'key': 'key2', 'value': 2},
-                {'key': 'key3', 'value': 3}
+                { key: 'key1', value: 1 },
+                { key: 'key2', value: 2 },
+                { key: 'key3', value: 3 },
         ]);
     });
 

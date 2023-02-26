@@ -160,11 +160,9 @@ export class DoubleLinkedList<T> {
 
     /**
      * Insert given value to the 'DoubleLinkedList' at the end and returns updated 'DoubleLinkedList'.
-     * 
      * @param value DoubleLinkedList
      */
     insertLast(value: T): DoubleLinkedList<T> {
-        
         const node = new DoubleLinkedNode(value);
 
         if (this.isEmpty()) {
@@ -184,7 +182,6 @@ export class DoubleLinkedList<T> {
 
     /**
      * Inserts given value to the 'DoubleLinkedList' at the beginning and returns updated 'DoubleLinkedList'.
-     * 
      * @param value DoubleLinkedList
      */
     insertFirst(value: T): DoubleLinkedList<T> {
@@ -207,7 +204,6 @@ export class DoubleLinkedList<T> {
 
     /**
      * Get node by given index.
-     * 
      * @param index Index of node.
      */
     public get(index: number): DoubleLinkedNode<T> | null {

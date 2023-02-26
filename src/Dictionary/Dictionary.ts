@@ -167,7 +167,7 @@ export class Dictionary<T> {
      * @returns an array of key-value pair objects in the form of [{key: key1, value: value1}, {key: key2, value: value2}, ...]
      */
     public toArray(): { key: string, value: T }[] {
-        return this.keys().map(key => {
+        return this.keys().map((key: string) => {
             return { key, value: this.items[key] };
         });
     }
