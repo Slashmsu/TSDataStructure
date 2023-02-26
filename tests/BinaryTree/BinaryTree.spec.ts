@@ -1,36 +1,68 @@
-import { BinaryTree } from '../../src/BinaryTree/BinaryTree';
+import { BinaryTree, BinaryTreeNode } from '../../src';
 import { expect } from 'chai';
 
 describe('BinaryTree', () => {
-
-    let binaryTree: BinaryTree<number>;
-
-    it('append', () => {
-        binaryTree = new BinaryTree<number>(1);
-        binaryTree.getRoot().append(2);
-        binaryTree.getRoot().append(3);
-
-        binaryTree.getRoot().getLeft().append(4);
-        binaryTree.getRoot().getLeft().append(5);
-
-        binaryTree.getRoot().getRight().setLeft(6);
-        binaryTree.getRoot().getRight().setRight(7);
-
-        expect(binaryTree.getRoot().getValue()).equal(1);
-
-        expect(binaryTree.getRoot().getLeft().getValue()).equal(2);
-        expect(binaryTree.getRoot().getRight().getValue()).equal(3);
-
-        expect(binaryTree.getRoot().getLeft().getLeft().getValue()).equal(4);
-        expect(binaryTree.getRoot().getLeft().getRight().getValue()).equal(5);
-
+    describe('getRoot()', () => {
+        it('should return the root node', () => {
+            const tree = new BinaryTree<number>(10);
+            expect(tree.getRoot().getValue()).equal(10);
+        });
     });
 
-    it('findNode', () => {
+    describe('findNode()', () => {
+        let tree: BinaryTree<number>;
 
-        expect(binaryTree.findNode(6).getValue()).equal(6);
-        expect(binaryTree.findNode(8)).equal(null);
+        beforeEach(() => {
+            // Create a sample binary tree
+            //      10
+            //     /  \
+            //    5   15
+            //   / \
+            //  3   8
+            const rootNode = new BinaryTreeNode<number>(10);
+            rootNode.setLeft(5);
+            rootNode.setRight(15);
+            rootNode.getLeft().setLeft(3);
+            rootNode.getLeft().setRight(8);
+            tree = new BinaryTree<number>(null);
+            tree['_root'] = rootNode;
+        });
 
+        it('should return null if the tree is empty', () => {
+            const emptyTree = new BinaryTree<number>(null);
+            expect(emptyTree.findNode(10)).equal(null);
+        });
+
+        it('should return the root node if its value matches', () => {
+            expect(tree.findNode(10)).equal(tree.getRoot());
+        });
+
+        it('should return the correct node if it exists in the tree', () => {
+            expect(tree.findNode(3)).equal(tree.getRoot().getLeft().getLeft());
+            expect(tree.findNode(8)).equal(tree.getRoot().getLeft().getRight());
+            expect(tree.findNode(15)).equal(tree.getRoot().getRight());
+        });
+
+        it('should return null if the node does not exist in the tree', () => {
+            expect(tree.findNode(20)).equal(null);
+        });
+
+        it('should return the first matching node if multiple nodes have the same value', () => {
+            const rootNode = new BinaryTreeNode<number>(10);
+            rootNode.setLeft(10);
+            rootNode.getLeft().setLeft(10);
+            const treeWithDuplicates = new BinaryTree<number>(null);
+            treeWithDuplicates['_root'] = rootNode;
+            expect(treeWithDuplicates.findNode(10)).equal(rootNode);
+        });
+
+        it('should be able to find a node with a string value', () => {
+            const rootNode = new BinaryTreeNode<string>('hello');
+            rootNode.setLeft('world');
+            const treeWithStrings = new BinaryTree<string>(null);
+            treeWithStrings['_root'] = rootNode;
+            expect(treeWithStrings.findNode('hello')).equal(rootNode);
+            expect(treeWithStrings.findNode('world')).equal(rootNode.getLeft());
+        });
     });
-
 });

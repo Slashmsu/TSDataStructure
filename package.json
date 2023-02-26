@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "test": "mocha dist/tests/**/*.spec.js  --reporter spec",
-    "test_watch": "mocha dist/tests/**/*.spec.js  --reporter spec --watch",
+    "test_watch": "tsc && mocha dist/tests/**/*.spec.js  --reporter spec --watch",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha dist/tests/**/*.spec.js  -- -R spec",
     "cover:nyx": "nyc npm test"
   },
@@ -49,7 +49,7 @@
     "chai": "^4.2.0",
     "coveralls": "^3.0.6",
     "istanbul": "^0.4.5",
-    "mocha": "^6.2.1",
+    "mocha": "^10.2.0",
     "nyc": "^14.1.1",
     "tslint": "^5.20.0",
     "tslint-config-airbnb": "^5.11.2",
