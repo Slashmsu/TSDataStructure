@@ -15,13 +15,11 @@ export class Dictionary<T> {
     // Private properties
     // =========================================================================================================================================================
 
+    private items: { [key: string]: T } = {};
+
     // ========================================================================================================================================================
     // Constructor
     // =========================================================================================================================================================
-
-    constructor() {
-
-    }
 
     // =========================================================================================================================================================
     // Public methods
@@ -31,101 +29,145 @@ export class Dictionary<T> {
      * Returns the number of entries (distinct keys) in this dictionary.
      */
     public size(): number {
-        return this.keys().length;
+        return Object.getOwnPropertyNames(this.items).length;
     }
 
     /**
-     * Returns 'true' if Dictionary is empty and 'false' if no.
-     * */
+     * Returns 'true' if the dictionary is empty and 'false' if not.
+     */
     public isEmpty(): boolean {
-        return this.keys().length === 0;
+        return this.size() === 0;
     }
 
     /**
-     * Add new item to dictionary.
+     * Adds a new item to the dictionary.
+     * @param key the key to add the value under
+     * @param value the value to add
      */
     public put(key: string, value: T) {
-        // @ts-ignore
-        this[key] = value;
+        this.items[key] = value;
     }
 
     /**
-     * Returns item by given key.
+     * Returns an item by the given key.
+     * @param key the key to look up
+     * @returns the item associated with the key, or undefined if the key is not in the dictionary
      */
-    public get(key: string): T {
-        // @ts-ignore
-        return this[key];
+    public get(key: string): T | undefined {
+        return this.items[key];
     }
 
     /**
-     * Removes item from dictionary.
+     * Removes an item from the dictionary.
+     * @param key the key of the item to remove
      */
     public remove(key: string) {
-        // @ts-ignore
-        delete this[key];
+        delete this.items[key];
     }
 
     /**
-     * Removes all items from dictionary.
+     * Removes all items from the dictionary.
      */
     public clear() {
-        const that = this;
-        that.keys().forEach(function (e) {
-            that.remove(e);
-        });
+        this.items = {};
     }
 
     /**
-     * Returns string array of items keys.
+     * Returns an array of all keys in the dictionary.
+     * @returns an array of strings representing the keys in the dictionary
      */
     public keys(): string[] {
-        const result = [];
-
-        for (const i in this) {
-            if (!(<any>this[i] instanceof Function)) {
-                result.push(i);
-            }
-        }
-
-        return result;
+        return Object.getOwnPropertyNames(this.items);
     }
 
     /**
-     * Returns array of all items.
+     * Returns an array of all values in the dictionary.
+     * @returns an array of the values in the dictionary
      */
-    public toArray(): T[] {
-        const result: T[] = [];
+    public values(): T[] {
+        return this.keys().map(key => this.items[key]);
+    }
 
-        for (const i in this) {
-            if (!(this.get(i) instanceof Function)) {
-                result.push(this.get(i));
+    /**
+     * Applies the given function to each key-value pair in the dictionary.
+     * @param fn a function to apply to each key-value pair
+     */
+    public forEach(fn: (value: T, key: string) => void) {
+        this.keys().forEach(key => fn(this.items[key], key));
+    }
+
+    /**
+     * Returns a new dictionary containing only the key-value pairs for which the given function returned true.
+     * @param fn a function to apply to each key-value pair
+     * @returns a new dictionary containing only the key-value pairs for which the given function returned true
+     */
+    public filter(fn: (value: T, key: string) => boolean): Dictionary<T> {
+        const result = new Dictionary<T>();
+        this.forEach((value, key) => {
+            if (fn(value, key)) {
+                result.put(key, value);
             }
-        }
-
+        });
         return result;
     }
 
     /**
-     * Set new value to given key item.
+     * Returns a new dictionary containing the results of applying the given function to each key-value pair in the dictionary.
+     * @param fn a function to apply to each key-value pair
+         * @returns a new dictionary containing the results of applying the given function to each key-value pair in the dictionary
+    */
+    public map<U>(fn: (value: T, key: string) => U): Dictionary<U> {
+        const result = new Dictionary<U>();
+        this.forEach((value, key) => {
+            result.put(key, fn(value, key));
+        });
+        return result;
+    }
+
+    /**
+     * Returns a new instance of the Dictionary object with the same key-value pairs of the original.
+     * @returns a new instance of the Dictionary object
+     */
+    public clone(): Dictionary<T> {
+        const result = new Dictionary<T>();
+        this.forEach((value, key) => {
+            result.put(key, value);
+        });
+        return result;
+    }
+
+    /**
+     * Sets the value associated with a key.
+     * @param key the key to set the value of
+     * @param value the new value
+     * @returns true if the key was in the dictionary and the value was set, false otherwise
      */
     public setValue(key: string, value: T): boolean {
-
-        // @ts-ignore
-        if (this[key]) {
-            // @ts-ignore
-            this[key] = value;
+        if (key in this.items) {
+            this.items[key] = value;
             return true;
-        }
+        } else {
             return false;
-
+        }
     }
 
     /**
-     * Check is item with given key exist.
+     * Determines if the dictionary contains a key.
+     * @param key the key to check for
+     * @returns true if the key is in the dictionary, false otherwise
      */
     public containsKey(key: string): boolean {
-        // @ts-ignore
-        return typeof this[key] !== 'undefined';
+        return key in this.items;
+    }
+
+    /**
+     * Returns an array of all key-value pairs in the dictionary.
+     * @returns an array of key-value pair objects in the form of [{key: key1, value: value1}, {key: key2, value: value2}, ...]
+     */
+    public toArray(): { key: string, value: T }[] {
+        return this.keys().map((key: string) => {
+            return { key, value: this.items[key] };
+        });
     }
 
     // =========================================================================================================================================================
