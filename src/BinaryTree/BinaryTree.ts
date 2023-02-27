@@ -83,7 +83,7 @@ export class BinaryTree<T> {
     }
 
     /**
-     * Returns min node in tree
+     * Deletes node from tree
      * @param node BinaryTreeNode
      **/
     delete(node: T): void {
@@ -122,7 +122,7 @@ export class BinaryTree<T> {
     }
 
     /**
-     * Returns min node in tree
+     * Returns in order traversal
      * @return BinaryTreeNode
      */
     inOrderTraversal(): T[] {
@@ -192,7 +192,11 @@ export class BinaryTree<T> {
 
         return result;
     }
-
+    
+     /**
+      * Returns level-order traversal of tree.
+      * @return BinaryTreeNode
+      */
     levelOrderTraversal(): T[] {
         const result: T[] = [];
         const queue: BinaryTreeNode<T>[] = [];
