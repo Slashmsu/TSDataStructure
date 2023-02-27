@@ -254,6 +254,42 @@ Returns 'root' node
 
 Returns node with a given value
 
+#### delete(node: T):void
+  
+Deletes node from tree
+
+#### inOrderTraversal():T[]
+  
+Returns in order traversal
+ 
+#### preOrderTraversal():T[]
+  
+Returns pre-order traversal of tree
+  
+#### levelOrderTraversal():T[]
+  
+Returns level-order traversal of tree
+  
+#### getHeight(): number
+  
+Returns the height of the tree
+  
+#### getDepth(node: BinaryTreeNode<T>): number 
+  
+Returns the depth of the node
+  
+####  getMinNode(node?: BinaryTreeNode<T>): BinaryTreeNode<T> 
+  
+Returns the max node in tree, if given node is null, returns max node in tree
+  
+####  toArray(): T[] 
+  
+Returns an array of nodes in tree
+  
+####  toString(): string
+  
+Returns a string representation of the tree
+  
 ```typescript
 
 const binaryTree = new BinaryTree<number>(1);
