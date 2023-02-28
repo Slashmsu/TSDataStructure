@@ -20,6 +20,10 @@ export class Tree<T> {
     // Public methods
     // =========================================================================================================================================================
 
+    /**
+     * Returns the root node of the tree.
+     * @returns The root node of the tree.
+     */
     getRoot(): TreeNode<T> {
         return this.root;
     }
