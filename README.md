@@ -313,71 +313,71 @@ Removes all entries from the map.
 
 ## TreeNode<T>
 
-### `getValue()`
+#### `getValue()`
 Returns the value of the node.
 
-### `setValue(value: T)`
+#### `setValue(value: T)`
 Sets the value of the node.
 
-### `getParent()`
+#### `getParent()`
 Returns the parent of the node.
 
-### `setParent(parent: TreeNode<T>)`
+#### `setParent(parent: TreeNode<T>)`
 Sets the parent of the node.
 
-### `getChildren()`
+#### `getChildren()`
 Returns the children of the node.
 
-### `addChild(child: TreeNode<T>)`
+#### `addChild(child: TreeNode<T>)`
 Adds a child to the node.
 
-### `removeChild(child: TreeNode<T>)`
+#### `removeChild(child: TreeNode<T>)`
 Removes a child from the node.
 
-### `isLeaf()`
+#### `isLeaf()`
 Removes all children from the node.
 
-### `getHeight()`
+#### `getHeight()`
 Returns the height of the node.
 
-### `getDepth()`
+#### `getDepth()`
 Returns the depth of the node.
 
-### `traversePreorder(callback: (node: TreeNode<T>) => void)`
+#### `traversePreorder(callback: (node: TreeNode<T>) => void)`
 Traverse the tree in preorder (root, left subtree, right subtree) and apply the given callback function to each node.
 
-### `traversePostorder(callback: (node: TreeNode<T>) => void)`
+#### `traversePostorder(callback: (node: TreeNode<T>) => void)`
 Traverse the tree in postorder (left subtree, right subtree, root) and apply the given callback function to each node.
 
-### `traverseInorder(callback: (node: TreeNode<T>) => void)`
+#### `traverseInorder(callback: (node: TreeNode<T>) => void)`
 Traverse the tree in inorder (left subtree, root, right subtree) and apply the given callback function to each node.
 
-### `traverseLevelOrder(callback: (node: TreeNode<T>) => void)`
+#### `traverseLevelOrder(callback: (node: TreeNode<T>) => void)`
 Traverse the tree level by level, starting at the root, and apply the given callback function to each node.
 
 ## Tree<T>
 
-### `getRoot()`
+#### `getRoot()`
 
 Returns the root node of the tree.
 
-### `addChild(parent, childValue)`
+#### `addChild(parent, childValue)`
 
 Adds a child node to a given parent node. Returns the newly created child node.
 
-### `removeNode(node)`
+#### `removeNode(node)`
 
 Removes a node and all of its children from the tree.
 
-### `size()`
+#### `size()`
 
 Returns the number of nodes in the tree.
 
-### `isEmpty()`
+#### `isEmpty()`
 
 Checks if the tree is empty (i.e., has no nodes).
 
-### `traverseLevelOrder(callback)`
+#### `traverseLevelOrder(callback)`
 
 Traverse the tree in breadth-first order and apply the given callback function to each node.
 
