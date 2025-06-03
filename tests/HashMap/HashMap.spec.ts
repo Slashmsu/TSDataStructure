@@ -123,9 +123,9 @@ describe('HashMap', () => {
             const result = map.values();
 
             expect(result.length).to.equal(3);
-            expect(result.includes(42)).to.be.true;
-            expect(result.includes(99)).to.be.true;
-            expect(result.includes(123)).to.be.true;
+            expect(result).to.include(42);
+            expect(result).to.include(99);
+            expect(result).to.include(123);
         });
 
         it('should return an empty array if the map is empty', () => {
