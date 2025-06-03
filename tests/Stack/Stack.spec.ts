@@ -20,9 +20,15 @@ describe('Stack', () => {
 
     });
 
-    it('pop if stacl is empty', () => {
+    it('pop if stack is empty', () => {
 
         expect(stack.pop()).equal(null);
+
+    });
+
+    it('peek on empty stack', () => {
+
+        expect(stack.peek()).equal(null);
 
     });
 
@@ -32,7 +38,7 @@ describe('Stack', () => {
         stack.push(2);
         stack.push(3);
 
-        expect(stack.peek()).equal(1);
+        expect(stack.peek()).equal(3);
 
     });
 
