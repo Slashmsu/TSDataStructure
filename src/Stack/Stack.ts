@@ -51,7 +51,7 @@ export class Stack<T> {
     peek(): T | null {
 
         if (this._store.length > 0) {
-            return this._store[0];
+            return this._store[this._store.length - 1];
         }
 
         return null;

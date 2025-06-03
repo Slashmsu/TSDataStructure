@@ -32,7 +32,7 @@ describe('Stack', () => {
         stack.push(2);
         stack.push(3);
 
-        expect(stack.peek()).equal(1);
+        expect(stack.peek()).equal(3);
 
     });
 
