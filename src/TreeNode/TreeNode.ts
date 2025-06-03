@@ -94,7 +94,7 @@ export class TreeNode<T> {
     }
 
     /**
-     * Removes all children from the node.
+     * Returns true if the node has no children.
      */
     isLeaf(): boolean {
         return this.children.length === 0;
