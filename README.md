@@ -244,6 +244,44 @@ queue.size(); // 2
 
 ```
 
+## PriorityQueue<T>
+
+#### push(value: T, priority: number)
+
+Insert an element into the queue with an associated priority.
+
+#### pop(): T | null
+
+Removes and returns the element with the highest priority, or `null` if the queue is empty.
+
+#### peek(): T | null
+
+Returns the element with the highest priority without removing it, or `null` if the queue is empty.
+
+#### size(): number
+
+Returns the number of elements in the queue.
+
+#### isEmpty(): boolean
+
+Returns `true` if the queue has no elements, otherwise `false`.
+
+#### toArray(): T[]
+
+Returns an array of the values in priority order.
+
+```typescript
+
+const pq = new PriorityQueue<number>();
+pq.push(5, 5);
+pq.push(1, 1);
+pq.push(3, 3);
+pq.pop(); // 1
+pq.peek(); // 3
+pq.size(); // 2
+
+```
+
 ## BinaryTree<T>
 
 #### getRoot(): BinaryTreeNode<T>
@@ -422,3 +460,13 @@ Traverse the tree in breadth-first order and apply the given callback function t
 
 
 If you have an advice, please feel free to contact with me
+
+## Git Hooks
+
+This project uses a pre-commit hook stored in `.githooks/pre-commit` to
+automatically bump the package patch version each time you commit. Enable the
+hooks with the following command:
+
+```bash
+git config core.hooksPath .githooks
+```
