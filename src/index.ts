@@ -9,5 +9,6 @@ export * from './Nodes/DoubleLinkedNode';
 export * from './Nodes/LinkedNode';
 export * from './Stack/Stack';
 export * from './Queue/Queue';
+export * from './PriorityQueue/PriorityQueue';
 export * from './Nodes/BinaryTreeNode';
 export * from './BinaryTree/BinaryTree';
