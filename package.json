@@ -1,6 +1,6 @@
 {
   "name": "datastructure-ts",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "Collection of data structures(LinkedList, DoubleLinkedList, Stack, Queue, Dictionary and etc...) for TypeScript.",
   "scripts": {
     "build": "tsc",
@@ -44,20 +44,19 @@
   },
   "homepage": "https://github.com/Slashmsu/TSDataStructure#readme",
   "devDependencies": {
-    "@types/chai": "^4.2.3",
-    "@types/lodash": "^4.14.191",
-    "@types/mocha": "^5.2.7",
-    "chai": "^4.2.0",
+    "@types/chai": "^5.2.2",
+    "@types/lodash": "^4.17.17",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.15.29",
+    "chai": "^5.2.0",
     "coveralls": "^3.0.6",
     "istanbul": "^0.4.5",
     "lodash": "^4.17.21",
-    "mocha": "^10.2.0",
-    "nodemon": "^2.0.20",
-    "nyc": "^14.1.1",
+    "mocha": "^11.5.0",
+    "nodemon": "^3.1.10",
+    "nyc": "^17.1.0",
     "tslint": "^5.20.0",
     "tslint-config-airbnb": "^5.11.2",
-    "typescript": "^5.8.3",
-    "@types/node": "^18.17.15"
-  },
-  "dependencies": {}
+    "typescript": "^5.8.3"
+  }
 }
