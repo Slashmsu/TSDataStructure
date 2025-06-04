@@ -6,6 +6,7 @@
         "no-increment-decrement": [false],
         "no-parameter-reassignment": [false],
         "ter-indent": [false],
-        "no-else-after-return": [false]
+        "no-else-after-return": [false],
+        "object-curly-spacing": false
     }
 }

@@ -282,6 +282,30 @@ pq.size(); // 2
 
 ```
 
+## Graph<T>
+
+#### addVertex(value: T)
+Adds a vertex to the graph.
+
+#### addEdge(from: T, to: T, weight?: number)
+Adds a directed edge between two vertices with optional weight.
+
+#### bfs(start: T): T[]
+Traverse the graph in breadth-first order starting from the given vertex.
+
+#### dfs(start: T): T[]
+Traverse the graph in depth-first order starting from the given vertex.
+
+#### shortestPath(start: T, end: T): T[]
+Returns the shortest path between two vertices.
+
+```typescript
+const g = new Graph<number>();
+g.addEdge(1, 2);
+g.addEdge(1, 3);
+const path = g.shortestPath(1, 3);
+```
+
 ## BinaryTree<T>
 
 #### getRoot(): BinaryTreeNode<T>
@@ -456,7 +480,6 @@ Checks if the tree is empty (i.e., has no nodes).
 Traverse the tree in breadth-first order and apply the given callback function to each node.
 
 # Todo
-#### 1) Graph
 
 
 If you have an advice, please feel free to contact with me
