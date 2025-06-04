@@ -1,0 +1,10 @@
+#!/bin/sh
+changelog="CHANGELOG.md"
+msgfile="$1"
+msg=$(head -n1 "$msgfile")
+
+# Ensure changelog contains bullet for the commit message
+if ! grep -Fq "- $msg" "$changelog"; then
+  sed -i "/^## \[Unreleased\]/a - $msg" "$changelog"
+  git add "$changelog"
+fi

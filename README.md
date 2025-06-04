@@ -500,9 +500,11 @@ If you have an advice, please feel free to contact with me
 
 ## Git Hooks
 
-This project uses a pre-commit hook stored in `.githooks/pre-commit` to
-automatically bump the package patch version each time you commit. Enable the
-hooks with the following command:
+This project uses git hooks stored in the `.githooks` directory. The
+`pre-commit` hook automatically bumps the package patch version each time you
+commit, while the `commit-msg` hook appends the commit message to the
+`CHANGELOG.md` under the *Unreleased* section. Enable the hooks with the
+following command:
 
 ```bash
 git config core.hooksPath .githooks
