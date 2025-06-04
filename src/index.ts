@@ -13,3 +13,4 @@ export * from './PriorityQueue/PriorityQueue';
 export * from './Nodes/BinaryTreeNode';
 export * from './BinaryTree/BinaryTree';
 export * from './Graph/Graph';
+export * from './AVLTree/AVLTree';
