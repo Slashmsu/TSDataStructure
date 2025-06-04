@@ -7,7 +7,8 @@
     "test": "mocha dist/tests/**/*.spec.js  --reporter spec",
     "test_watch": "tsc && mocha dist/tests/**/*.spec.js  --reporter spec --watch",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha dist/tests/**/*.spec.js  -- -R spec",
-    "cover:nyx": "nyc npm test"
+    "cover:nyx": "nyc npm test",
+    "lint": "tslint -c tslint.json -p tsconfig.json"
   },
   "repository": {
     "type": "git",

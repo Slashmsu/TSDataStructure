@@ -507,3 +507,12 @@ hooks with the following command:
 ```bash
 git config core.hooksPath .githooks
 ```
+
+## Development
+
+Install dependencies before running lint or tests:
+
+```bash
+npm install
+npm run lint
+```
