@@ -23,7 +23,7 @@ This document outlines possible improvements and future developments for the `TS
 ## Documentation
 
 - **API Examples**: Expand the README with practical examples demonstrating each data structure in real-world scenarios.
-- **Contribution Guide**: Provide a `CONTRIBUTING.md` describing how to set up the project, run tests, and submit pull requests.
+- **Contribution Guide**: Provide a `CONTRIBUTING.md` describing how to set up the project, run tests, and submit pull requests. *(Implemented)*
 - **Changelog**: Maintain a `CHANGELOG.md` to track notable changes between releases.
 
 ## Packaging and Distribution
