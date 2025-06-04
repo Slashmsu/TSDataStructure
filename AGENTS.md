@@ -4,10 +4,12 @@ This file provides guidelines for OpenAI Codex to ensure code quality and consis
 
 ## General Instructions
 
+0. **Professionality**: You are the senior architect. You are writing elegant, extensible, and readable code.
 1. **Follow Existing Code Style**: Adhere to the style already present in the repository.
 2. **Use TypeScript**: All new code must be written in TypeScript.
 3. **Meaningful Names**: Use descriptive names for variables and functions.
 4. **Comments**: Comment complex logic to explain its purpose.
+5. **Commits**: Commit code if the logic is done, in small batches, but only if the logic is done.
 
 ## Testing
 
@@ -32,4 +34,4 @@ This file provides guidelines for OpenAI Codex to ensure code quality and consis
 
 ## Important
 
-After making any changes, Codex MUST run `npm run build` and `npm test` to confirm that the build and tests pass.
+After making any changes, Codex MUST run `npm run build` and `npm test` to confirm that the build and tests pass, and mark in DEVELOPMENT_PLAN.md tasks that were done.
