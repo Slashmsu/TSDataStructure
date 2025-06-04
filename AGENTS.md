@@ -23,7 +23,7 @@ This file provides guidelines for OpenAI Codex to ensure code quality and consis
 2. **Run All Tests**: `npm test`
 3. **Watch Tests**: `npm run test_watch`
 4. **Coverage**: `npm run cover`
-5. **Lint**: `npx tslint -c tslint.json -p tsconfig.json`
+5. **Lint**: `npx eslint \"src/**/*.ts\" \"tests/**/*.ts\"`
 
 ## Pull Request Guidelines
 

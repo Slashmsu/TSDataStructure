@@ -6,9 +6,8 @@
     "build": "tsc",
     "test": "mocha dist/tests/**/*.spec.js  --reporter spec",
     "test_watch": "tsc && mocha dist/tests/**/*.spec.js  --reporter spec --watch",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha dist/tests/**/*.spec.js  -- -R spec",
-    "cover:nyx": "nyc npm test",
-    "lint": "tslint -c tslint.json -p tsconfig.json"
+    "cover": "nyc npm test",
+    "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -49,15 +48,14 @@
     "@types/lodash": "^4.17.17",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.15.29",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
     "chai": "^4.5.0",
-    "coveralls": "^3.0.6",
-    "istanbul": "^0.4.5",
+    "eslint": "^8.56.0",
     "lodash": "^4.17.21",
     "mocha": "^11.5.0",
     "nodemon": "^3.1.10",
     "nyc": "^17.1.0",
-    "tslint": "^5.20.0",
-    "tslint-config-airbnb": "^5.11.2",
     "typescript": "^5.8.3"
   }
 }

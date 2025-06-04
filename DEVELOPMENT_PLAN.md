@@ -4,15 +4,15 @@ This document outlines possible improvements and future developments for the `TS
 
 ## Code Quality and Tooling
 
-- **Adopt ESLint**: Replace the deprecated TSLint configuration with ESLint to keep the linting ecosystem up to date.
-- **Upgrade Dependencies**: Review and update dependencies regularly to keep up with security fixes and improvements.
+- **Adopt ESLint**: Replace the deprecated TSLint configuration with ESLint to keep the linting ecosystem up to date. *(Implemented)*
+- **Upgrade Dependencies**: Review and update dependencies regularly to keep up with security fixes and improvements. *(Implemented)*
 - **TypeScript Strict Mode**: Consider enabling `strictNullChecks` and other strict compiler options for safer type checking.
 
 ## Testing and CI
 
 - **Increase Test Coverage**: Add more unit tests covering edge cases and error conditions for all data structures.
 - **Continuous Integration**: Configure a modern CI workflow (e.g., GitHub Actions) to automatically run build and tests on each commit.
-- **Coverage Reporting**: Switch from `istanbul` to `nyc` or a modern coverage tool and publish coverage reports.
+- **Coverage Reporting**: Switch from `istanbul` to `nyc` or a modern coverage tool and publish coverage reports. *(Implemented)*
 
 ## New Data Structures
 
