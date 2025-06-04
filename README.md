@@ -306,6 +306,20 @@ g.addEdge(1, 3);
 const path = g.shortestPath(1, 3);
 ```
 
+## AVLTree<T>
+
+`AVLTree` maintains balance automatically after each insertion to keep
+operations fast.
+
+```typescript
+const avl = new AVLTree<number>();
+avl.insert(1);
+avl.insert(2);
+avl.insert(3); // tree rotates, keeping 2 as the root
+avl.contains(3); // true
+avl.toArray(); // [1, 2, 3]
+```
+
 ## BinaryTree<T>
 
 #### getRoot(): BinaryTreeNode<T>

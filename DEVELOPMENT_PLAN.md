@@ -18,7 +18,7 @@ This document outlines possible improvements and future developments for the `TS
 
 - **Graph**: Implement a basic graph structure with common algorithms such as BFS, DFS, and shortest path algorithms. *(Implemented)*
 - **PriorityQueue**: Provide a priority queue implementation for efficient task scheduling. *(Implemented)*
-- **Balanced Trees**: Add self-balancing tree variants (e.g., AVL or Red-Black trees) for more efficient search and insert operations.
+- **Balanced Trees**: Add self-balancing tree variants (e.g., AVL or Red-Black trees) for more efficient search and insert operations. *(Implemented)*
 
 ## Documentation
 
