@@ -84,6 +84,19 @@ describe('Dictionary', () => {
         ]);
     });
 
+    it('should be iterable with for-of', () => {
+        dictionary.put('a', 1);
+        dictionary.put('b', 2);
+        const entries: { key: string; value: number }[] = [];
+        for (const item of dictionary) {
+            entries.push(item);
+        }
+        expect(entries).to.deep.equal([
+            { key: 'a', value: 1 },
+            { key: 'b', value: 2 },
+        ]);
+    });
+
     it('setValue()', () => {
 
         dictionary.put('key1', 1);

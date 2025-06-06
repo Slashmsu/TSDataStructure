@@ -80,4 +80,15 @@ describe('Tree', () => {
             expect(visitedNodes).to.deep.equal([1, 2, 3, 4, 5]);
         });
     });
+
+    it('should be iterable with for-of', () => {
+        const root = tree.getRoot();
+        tree.addChild(root, 2);
+        tree.addChild(root, 3);
+        const collected: number[] = [];
+        for (const val of tree) {
+            collected.push(val);
+        }
+        expect(collected).to.deep.equal([1, 2, 3]);
+    });
 });

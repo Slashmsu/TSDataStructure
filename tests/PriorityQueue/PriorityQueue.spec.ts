@@ -31,4 +31,16 @@ describe('PriorityQueue', () => {
         expect(queue.peek()).equal(null);
         expect(queue.size()).equal(0);
     });
+
+    it('should be iterable with for-of', () => {
+        queue.push('low', 5);
+        queue.push('high', 1);
+        queue.push('mid', 3);
+
+        const collected: string[] = [];
+        for (const value of queue) {
+            collected.push(value);
+        }
+        expect(new Set(collected)).to.deep.equal(new Set(['low', 'high', 'mid']));
+    });
 });

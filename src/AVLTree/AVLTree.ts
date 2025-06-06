@@ -62,6 +62,21 @@ export class AVLTree<T> {
         return result;
     }
 
+    /**
+     * Enables iteration over the tree values in-order.
+     */
+    public *[Symbol.iterator](): IterableIterator<T> {
+        function* traverse(node: AVLTreeNode<T> | null): IterableIterator<T> {
+            if (node === null) {
+                return;
+            }
+            yield* traverse(node.getLeft());
+            yield node.getValue();
+            yield* traverse(node.getRight());
+        }
+        yield* traverse(this.root);
+    }
+
     private insertNode(node: AVLTreeNode<T> | null, value: T): AVLTreeNode<T> {
         if (node === null) {
             return new AVLTreeNode<T>(value);

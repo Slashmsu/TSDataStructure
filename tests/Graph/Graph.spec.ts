@@ -36,4 +36,14 @@ describe('Graph', () => {
         const path = graph.shortestPath('A', 'C');
         expect(path).to.deep.equal(['A', 'B', 'C']);
     });
+
+    it('should be iterable with for-of', () => {
+        graph.addVertex('X');
+        graph.addVertex('Y');
+        const nodes: string[] = [];
+        for (const v of graph) {
+            nodes.push(v);
+        }
+        expect(new Set(nodes)).to.deep.equal(new Set(['X', 'Y']));
+    });
 });

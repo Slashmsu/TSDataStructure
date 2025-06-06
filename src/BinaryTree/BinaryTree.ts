@@ -317,6 +317,21 @@ export class BinaryTree<T> {
     }
 
     /**
+     * Enables iteration over tree values in-order.
+     */
+    public *[Symbol.iterator](): IterableIterator<T> {
+        function* traverse(node: BinaryTreeNode<T> | null): IterableIterator<T> {
+            if (node === null || node.getValue() === null) {
+                return;
+            }
+            yield* traverse(node.getLeft());
+            yield node.getValue();
+            yield* traverse(node.getRight());
+        }
+        yield* traverse(this._root);
+    }
+
+    /**
      * Returns a string representation of the tree.
      * @return string
      */

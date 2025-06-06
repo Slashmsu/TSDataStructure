@@ -89,4 +89,19 @@ export class Tree<T> {
             node.getChildren().forEach(child => queue.push(child));
         }
     }
+
+    /**
+     * Enables iteration over the tree nodes in level order.
+     */
+    public *[Symbol.iterator](): IterableIterator<T> {
+        if (this.root === null) {
+            return;
+        }
+        const queue: TreeNode<T>[] = [this.root];
+        while (queue.length > 0) {
+            const node = queue.shift()!;
+            yield node.getValue();
+            queue.push(...node.getChildren());
+        }
+    }
 }

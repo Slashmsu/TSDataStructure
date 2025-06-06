@@ -147,4 +147,13 @@ export class Graph<T> {
         }
         return path;
     }
+    /**
+     * Enables iteration over all vertices in the graph.
+     */
+    public *[Symbol.iterator](): IterableIterator<T> {
+        for (const key of this.adjacency.keys()) {
+            yield key;
+        }
+    }
+
 }

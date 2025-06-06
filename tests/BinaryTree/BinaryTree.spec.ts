@@ -456,6 +456,15 @@ describe('BinaryTree', () => {
 
                 expect(tree.toArray()).to.deep.equal([3, 5, 8, 10, 15]);
             });
+            it('should be iterable with for-of', () => {
+                const tree = new BinaryTree<number>();
+                [10, 5, 15].forEach(v => tree.insert(v));
+                const result: number[] = [];
+                for (const value of tree) {
+                    result.push(value);
+                }
+                expect(result).to.deep.equal([5, 10, 15]);
+            });
         });
     });
 

@@ -170,6 +170,15 @@ export class Dictionary<T> {
         });
     }
 
+    /**
+     * Enables iteration over key-value pairs in insertion order.
+     */
+    public *[Symbol.iterator](): IterableIterator<{ key: string; value: T }> {
+        for (const key of this.keys()) {
+            yield { key, value: this.items[key] };
+        }
+    }
+
     // =========================================================================================================================================================
     // Private methods
     // =========================================================================================================================================================

@@ -52,6 +52,18 @@ describe('Stack', () => {
 
     });
 
+    it('should be iterable with for-of', () => {
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        const collected: number[] = [];
+        for (const value of stack) {
+            collected.push(value);
+        }
+        expect(collected).to.deep.equal([1, 2, 3]);
+    });
+
     it('size', () => {
 
         stack.push(1);
