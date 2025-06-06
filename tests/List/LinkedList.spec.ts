@@ -69,6 +69,19 @@ describe('LinkedList', () => {
 
     });
 
+    it('should be iterable with for-of', () => {
+        linkedList.append(1);
+        linkedList.append(2);
+        linkedList.append(3);
+        linkedList.append(4);
+
+        const collected: number[] = [];
+        for (const value of linkedList) {
+            collected.push(value);
+        }
+        expect(collected).to.deep.equal([1, 2, 3, 4]);
+    });
+
     it('getLast', () => {
         linkedList.append(1);
         linkedList.append(2);

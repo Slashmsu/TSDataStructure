@@ -121,6 +121,17 @@ export class LinkedList<T> {
     }
 
     /**
+     * Enables iteration over the list using ES6 iteration protocols.
+     */
+    public *[Symbol.iterator](): IterableIterator<T> {
+        let node = this._head;
+        while (node !== null) {
+            yield node.getValue();
+            node = node.getNext();
+        }
+    }
+
+    /**
      * Inserts given value to the linkedList and returns updated LinkedList
      * */
     /*public insert (): LinkedList<T> {
