@@ -26,4 +26,14 @@ describe('AVLTree', () => {
         [4, 2, 6, 1, 3, 5, 7].forEach(v => tree.insert(v));
         expect(tree.toArray()).to.deep.equal([1,2,3,4,5,6,7]);
     });
+
+    it('should be iterable with for-of', () => {
+        const tree = new AVLTree<number>();
+        [3,1,4].forEach(v => tree.insert(v));
+        const result: number[] = [];
+        for (const v of tree) {
+            result.push(v);
+        }
+        expect(result).to.deep.equal([1,3,4]);
+    });
 });

@@ -122,6 +122,17 @@ export class DoubleLinkedList<T> {
     }
 
     /**
+     * Enables iteration over the list using ES6 iteration protocols.
+     */
+    public *[Symbol.iterator](): IterableIterator<T> {
+        let node = this._head;
+        while (node !== null) {
+            yield node.getValue();
+            node = node.getNext();
+        }
+    }
+
+    /**
      * Inserts given value to the DoubleLinkedList and returns updated DoubleLinkedList.
      * */
     public insert(afterPosition: number, value: T): DoubleLinkedList<T> {

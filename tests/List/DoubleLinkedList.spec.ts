@@ -79,6 +79,19 @@ describe('DoubleLinkedList', () => {
 
     });
 
+    it('should be iterable with for-of', () => {
+        doubleLinkedList.append(1);
+        doubleLinkedList.append(2);
+        doubleLinkedList.append(3);
+        doubleLinkedList.append(4);
+
+        const collected: number[] = [];
+        for (const value of doubleLinkedList) {
+            collected.push(value);
+        }
+        expect(collected).to.deep.equal([1, 2, 3, 4]);
+    });
+
     it('getLast', () => {
         doubleLinkedList.append(1);
         doubleLinkedList.append(2);

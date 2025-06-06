@@ -72,6 +72,15 @@ export class Stack<T> {
         return this._store;
     }
 
+    /**
+     * Enables iteration over stack values from bottom to top.
+     */
+    public *[Symbol.iterator](): IterableIterator<T> {
+        for (const item of this._store) {
+            yield item;
+        }
+    }
+
     // =========================================================================================================================================================
     // Private methods
     // =========================================================================================================================================================

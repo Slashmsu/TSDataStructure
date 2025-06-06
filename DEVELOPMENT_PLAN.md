@@ -35,5 +35,5 @@ This document outlines possible improvements and future developments for the `TS
 
 - **Performance Benchmarks**: Add benchmarks to evaluate and optimize the performance of the data structures.
 - **Browser Support**: Provide build targets that work in browser environments, possibly using bundlers like Rollup or Webpack.
-- **Typed Iterators**: Implement iterator interfaces for data structures to integrate seamlessly with ES6 iteration protocols.
+- **Typed Iterators**: Implement iterator interfaces for data structures to integrate seamlessly with ES6 iteration protocols. *(Implemented)*
 

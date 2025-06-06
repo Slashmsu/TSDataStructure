@@ -46,6 +46,18 @@ describe('Queue', () => {
 
     });
 
+    it('should be iterable with for-of', () => {
+        queue.push(1);
+        queue.push(2);
+        queue.push(3);
+
+        const collected: number[] = [];
+        for (const value of queue) {
+            collected.push(value);
+        }
+        expect(collected).to.deep.equal([1, 2, 3]);
+    });
+
     it('size', () => {
 
         queue.push(1);

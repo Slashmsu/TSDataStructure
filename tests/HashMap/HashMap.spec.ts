@@ -212,4 +212,17 @@ describe('HashMap', () => {
             expect(map.isEmpty()).to.be.true;
         });
     });
+
+    it('should be iterable with for-of', () => {
+        map.put('a', 1);
+        map.put('b', 2);
+        const entries: Array<[string, number]> = [];
+        for (const pair of map) {
+            entries.push(pair);
+        }
+        expect(entries).to.deep.include.members([
+            ['a', 1],
+            ['b', 2],
+        ]);
+    });
 });

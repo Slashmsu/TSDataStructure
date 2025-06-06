@@ -42,6 +42,15 @@ export class PriorityQueue<T> {
         return this.heap.map(item => item.value);
     }
 
+    /**
+     * Iterates over the queue values in heap order.
+     */
+    public *[Symbol.iterator](): IterableIterator<T> {
+        for (const item of this.heap) {
+            yield item.value;
+        }
+    }
+
     private bubbleUp(index: number): void {
         const element = this.heap[index];
         while (index > 0) {

@@ -70,6 +70,15 @@ export class Queue<T> {
         return this._store;
     }
 
+    /**
+     * Enables iteration over queue values from front to back.
+     */
+    public *[Symbol.iterator](): IterableIterator<T> {
+        for (const item of this._store) {
+            yield item;
+        }
+    }
+
     // =========================================================================================================================================================
     // Private methods
     // =========================================================================================================================================================

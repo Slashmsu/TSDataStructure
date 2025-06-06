@@ -135,5 +135,14 @@ export class HashMap<K, V> {
   public clear(): void {
     this.map.clear();
   }
+  /**
+   * Enables iteration over key-value pairs in insertion order.
+   */
+  public *[Symbol.iterator](): IterableIterator<[K, V]> {
+    for (const entry of this.map.entries()) {
+      yield entry;
+    }
+  }
+
 
 }
